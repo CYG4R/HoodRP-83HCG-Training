@@ -58,6 +58,117 @@
             opacity: 0.5;
         }
 
+        /* INTRO / LOADING SCREEN */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(235, 110, 31, 0.2) 0%, transparent 60%),
+                radial-gradient(circle at 10% 80%, rgba(217, 83, 79, 0.1) 0%, transparent 50%);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .intro-box {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            background: var(--panel-bg);
+            backdrop-filter: blur(12px);
+            border: 2px solid var(--primary-glow);
+            border-radius: 16px;
+            box-shadow: 0 0 40px rgba(235, 110, 31, 0.3);
+            animation: introPulse 2s infinite alternate;
+        }
+
+        @keyframes introPulse {
+            0% { box-shadow: 0 0 20px rgba(235, 110, 31, 0.2); }
+            100% { box-shadow: 0 0 40px rgba(235, 110, 31, 0.5); }
+        }
+
+        .intro-title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(235, 110, 31, 0.5);
+        }
+
+        .intro-title span {
+            color: var(--accent-red);
+        }
+
+        .intro-desc {
+            font-size: 14px;
+            color: #aaa;
+            font-family: monospace;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .intro-btn {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            color: #000;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(235, 110, 31, 0.5);
+        }
+
+        .intro-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(235, 110, 31, 0.8);
+            background: #fff;
+            color: #000;
+        }
+
+        .loading-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .loading-bar-frame {
+            width: 100%;
+            height: 10px;
+            background: #1a1a1a;
+            border: 1px solid var(--primary-glow);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .loading-bar-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+            transition: width 0.1s linear;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .loading-status-text {
+            font-family: monospace;
+            font-size: 13px;
+            color: var(--primary-glow);
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -1013,6 +1124,23 @@
 </head>
 <body>
 
+    <!-- EKRAN POWITALNY / ŁADOWANIE -->
+    <div id="intro-overlay">
+        <div class="intro-box">
+            <div class="intro-title">83 HOOVER <span>CRIMINALS</span></div>
+            <div class="intro-desc" id="introDescText">Kliknij przycisk poniżej, aby załadować materiały i wejść do poradnika.</div>
+            
+            <button id="startSiteBtn" class="intro-btn" onclick="startLoadingAndSite()">Wejdź do Poradnika</button>
+            
+            <div id="loadingContainer" class="loading-container">
+                <div class="loading-bar-frame">
+                    <div id="loadingBarFill" class="loading-bar-fill"></div>
+                </div>
+                <div id="loadingStatusText" class="loading-status-text">Ładowanie zasobów... 0%</div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div>
             <header>
@@ -1225,7 +1353,6 @@
                             <div class="mini-visual-badge">Sprawdź</div>
                         </div>
                     </div>
-
                     <div class="mini-visual-card" onclick="playSound(); openTopic('Podział')">
                         <video src="png/podział.webm" class="mini-visual-thumb" autoplay loop muted playsinline></video>
                         <div class="mini-visual-overlay"></div>
@@ -1234,7 +1361,6 @@
                             <div class="mini-visual-badge">Sprawdź</div>
                         </div>
                     </div>
-
                     <div class="mini-visual-card" onclick="playSound(); openTopic('Wackouts')">
                         <video src="png/wackouts.webm" class="mini-visual-thumb" autoplay loop muted playsinline></video>
                         <div class="mini-visual-overlay"></div>
@@ -1257,7 +1383,6 @@
                             <div class="mini-visual-badge">Sprawdź</div>
                         </div>
                     </div>
-
                     <div class="mini-visual-card" onclick="playSound(); openTopic('Inicjacje')">
                         <video src="png/ini.webm" class="mini-visual-thumb" autoplay loop muted playsinline></video>
                         <div class="mini-visual-overlay"></div>
@@ -1274,7 +1399,6 @@
                             <div class="mini-visual-badge">Sprawdź</div>
                         </div>
                     </div>
-
                     <div class="mini-visual-card" onclick="playSound(); openTopic('Ranker Behavior')">
                         <video src="png/rb.webm" class="mini-visual-thumb" autoplay loop muted playsinline></video>
                         <div class="mini-visual-overlay"></div>
@@ -1283,7 +1407,6 @@
                             <div class="mini-visual-badge">Sprawdź</div>
                         </div>
                     </div>
-
                     <div class="mini-visual-card" onclick="playSound(); openTopic('DP')">
                         <video src="png/dp.webm" class="mini-visual-thumb" autoplay loop muted playsinline></video>
                         <div class="mini-visual-overlay"></div>
@@ -1292,7 +1415,6 @@
                             <div class="mini-visual-badge">Sprawdź</div>
                         </div>
                     </div>
-
                     <div class="mini-visual-card" onclick="playSound(); openTopic('Zachowania')">
                         <video src="png/graf.webm" class="mini-visual-thumb" autoplay loop muted playsinline></video>
                         <div class="mini-visual-overlay"></div>
@@ -1301,7 +1423,6 @@
                             <div class="mini-visual-badge">Sprawdź</div>
                         </div>
                     </div>
-
 					<div class="mini-visual-card" onclick="playSound(); openTopic('Graffiti')">
                        <video src="png/graffiti.webm" class="mini-visual-thumb" autoplay loop muted playsinline></video>
                        <div class="mini-visual-overlay"></div>
@@ -1463,7 +1584,7 @@ Na początku lat 90. podziały wewnętrzne i konflikty zewnętrzne sprawiły, ż
 
             'UZALEŻNIENIA': 
 `• Jeśli twoja postać uzależni się od narkotyku 
-Musisz wziąć pod uwagę jego koszta, możesz odegrać że jesteś na głodzie narkotykowym i gdy nie masz cashu to jesteś bardzo zdeterminowany żeby go uzyskać albo zdobyć weed żeby zaspokoić swoją potrzebę! Chcemy abyś rozważył są uzależnienia i ich rzeczywiste koszty. Narkotyki które bierzesz bez najmniejszego zastanowienia się, Percs, zioło, alkohol czy tam inne używki - to wszystko kosztuje. 
+Musisz wziąć pod uwagę jego koszta, możesz odegrawać że jesteś na głodzie narkotykowym i gdy nie masz cashu to jesteś bardzo zdeterminowany żeby go uzyskać albo zdobyć weed żeby zaspokoić swoją potrzebę! Chcemy abyś rozważył są uzależnienia i ich rzeczywiste koszty. Narkotyki które bierzesz bez najmniejszego zastanowienia się, Percs, zioło, alkohol czy tam inne używki - to wszystko kosztuje. 
 
 Jestem pewny że wielu ludzi w pewnym momencie wydało kilkaset dolarów na zioło które jest jednym z najtańszych narkotyków. Ale czy twoja postać faktycznie zrobiła rzeczy które musiałaby zrobić, aby móc sobie pozwolić na ten nawyk? W większości przypadków powiedziałbym, że nie. I właściwie to większość graczy odgrywa zażywanie narkotyków bez konsekwencji takich jak uzależnienie, lub nawet brak pieniędzy na następną działke. Odgrywanie bycia na haju regularnie i aktywnie pokazuje twój problem z tym właśnie narkotykiem. Możesz odegrywać że chcesz wyjść z uzależnienia, lub możesz odegrywać przeciwieństwo i robić wszystko aby zyskiwać pieniądze aby znowu być high.
 `,
@@ -2105,7 +2226,7 @@ Jest znana z tego, że ma wysoki „body count” — spała z wieloma facetami 
 Ta dziewczyna naprawdę jest traktowana jak „jeden z chłopaków”. I trzeba zaznaczyć — jest ogromna różnica między dziewczyną, która faktycznie uchodzi za część męskiej ekipy, a taką, która tylko się wokół nich kręci. Zazwyczaj dorastała wśród mężczyzn — miała wielu braci, kuzynów albo po prostu wychowała się w męskim towarzystwie. Dziewczyna, którą faceci naprawdę uważają za „jedną z nich”, to taka, która nie angażuje się w dziecinne dramy czy konflikty z innymi dziewczynami. To nie znaczy, że nie wspiera swoich koleżanek — kiedy trzeba, stanie za nimi murem. Rozwiązuje problemy jak chłopak — walka, a potem temat zamknięty. Dziewczyny, które ciągle hejtują inne dziewczyny i mówią „ja nie jestem jak inne”, to nie „jedna z chłopaków” — to klasyczne „pick me”.Nie musi być chłopczycą, nie musi wyglądać męsko ani być twardzielką. Może wyglądać bardzo kobieco, ale po prostu lepiej dogaduje się z facetami — i nie oznacza to, że musi nienawidzić innych dziewczyn.I co ważne — taka dziewczyna nie jest postrzegana jako „laska do zaliczenia”. Jeśli byłaby rozwiązła, chłopaki nie traktowaliby jej jak swojego — próbowaliby ją po prostu przelecieć. Szacunek i lojalność są kluczowe.
 
 •  Dziewczyna-Trofeum (Trophy Girl)
-Ta dziewczyna jest całkowicie oddana swojej ekipie — sypia tylko z ludźmi z gangu, a jej chłopak to niemal na pewno ktoś z tego samego setu. Nie flirtuje z facetami spoza swojego osiedla. Jest bardzo lojalna — zarówno wobec swojego związku, jak i gangu. Ma wielki szacunek i jest znana właśnie z tej lojalności. Nie tylko o niej mówi, ale pokazuje ją w swoich czynach, w relacjach z ludźmi i tym, co robi dla swojej ekipy. Nigdy nie próbuje usprawiedliwiać ani bronić innych gangów — gdy tylko ktoś stanowi zagrożenie dla jej setu, szybko reaguje i działa. Ta dziewczyna nie jest „laską na jedną noc” i nie robi niczego, co mogłoby wzbudzać takie podejrzenia. Może czuć się dobrze ze sobą i dobrze się bawić, ale nigdy nie robi nic specjalnie, by zdobyć męską uwagę.`,
+Ta dziewczyna jest całkowicie oddana swojej ekipie — sypia tylko z ludźmi z gangu, a jej chłopak to niemal na pewno ktoś z tego samego setu. Nie flirtuje z facetami spoza swojego osiedla. Jest bardzo lojalna — zarówno wobec swojego związku, jak i gangu. Ma wielki szacunek i jest znana właśnie z tej lojalności. Nie tylko o niej mówi, ale pokazuje ją w swoich czynach, w relacjach z ludźmi i tym, co robi dla swojej ekipy. Nigdy nie próbuje usprawiedliwiać ani bronić innych gangów — gdy tylko ktoś stanowi zagrożenie dla jej setu, szybko reaguje i działa. Ta dziewczyna nie jest „laską na jedną noc” i nie robi niczego, co mogłoby wzbudzać takie podejrzezenia. Może czuć się dobrze ze sobą i dobrze się bawić, ale nigdy nie robi nic specjalnie, by zdobyć męską uwagę.`,
 
             'GRANIE NERDA':
 `• Granie nerda czyt. (cywila nienależącego do struktur gangu od samego początku) to świetny punkt wyjścia do budowania długofalowego i realistycznego rozwoju postaci (Rozwijanie postaci.)
@@ -2849,34 +2970,89 @@ Można też zauważyć że cała ta transformacja dzieje się równolegle z rozw
         let startDragX = 0;
         let startDragY = 0;
 
-        // ŁADOWANIE ZDJĘĆ PNG W TLE (PRELOAD)
-        function preloadPngImages() {
-            const pngImages = [
-                'png/ikzlogo.png', 'png/kat1.png', 'png/kat2.png', 'png/kat3.png',
-                'png/drug.png', 'png/ubior.png', 'png/slabosc.png', 'png/story.png',
-                'png/hoodnames1.png', 'png/nuda.png', 'png/grzeczni.png', 'png/school.png',
-                'png/lapd.png', 'png/slang.png', 'png/spot.png', 'png/gsm.png',
-                'png/relacje.png', 'png/affilacje.png', 'png/hoodday.png', 'png/podział.png',
-                'png/wackouts.png', 'png/generacje.png', 'png/ini.png', 'png/tatuaz.png',
-                'png/rb.png', 'png/dp.png', 'png/graf.png', 'png/graffiti.png',
-                'png/trophy.png', 'png/man.png', 'png/girl.png', 'png/nerd.png',
-                'png/szkola.png', 'png/tatuaze.png', 'png/inicjacja.png', 'png/gs.png',
-                'png/gs1.png', 'png/wackout.png', 'png/rp1.png', 'png/hp1.png',
-                'png/rp2.png', 'png/hp2.png', 'png/rp3.png', 'png/hp3.png',
-                'png/rp4.png', 'png/hp4.png', 'png/rp5.png', 'png/hp5.png',
-                'png/rp6.png', 'png/hp6.png', 'png/hd.png', 'png/hd1.png',
-                'png/hd2.png', 'png/HA.png', 'png/hacap.png', 'png/hacap2.png',
-                'png/DT.png', 'png/dtcap.png', 'png/dtcap2.png', 'png/WN.png',
-                'png/wncap.png', 'png/wncap2.png', 'png/okcl.png', 'png/okc.png',
-                'png/okc2.png', 'png/cbl.png', 'png/cb.png', 'png/cb2.png',
-                'png/kcl.png', 'png/kc.png', 'png/kc2.png', 'png/ntb.png'
+        // SYSTEM INTRO I PŁYNNEGO ŁADOWANIA ZASOBÓW
+        function startLoadingAndSite() {
+            playSound();
+            const btn = document.getElementById('startSiteBtn');
+            const desc = document.getElementById('introDescText');
+            const loader = document.getElementById('loadingContainer');
+            
+            btn.style.display = 'none';
+            desc.style.display = 'none';
+            loader.style.display = 'flex';
+
+            const assetsToLoad = [
+                'webp/ikzlogo.webp', 'webp/kat1.webp', 'webp/kat2.webp', 'webp/kat3.webp',
+                'webp/drug.webp', 'webp/ubior.webp', 'webp/slabosc.webp', 'webp/story.webp',
+                'webp/hoodnames1.webp', 'webp/nuda.webp', 'webp/grzeczni.webp', 'webp/school.webp',
+                'webp/lapd.webp', 'webp/slang.webp', 'webp/spot.webp', 'webp/gsm.png',
+                'webp/relacje.webp', 'webp/affilacje.webp', 'webp/hoodday.webp', 'webp/podział.webm',
+                'webp/wackouts.webm', 'webp/generacje.webp', 'webp/ini.webm', 'webp/tatuaz.webp',
+                'webp/rb.webm', 'webp/dp.webm', 'webp/graf.webm', 'webp/graffiti.webm',
+                'webp/trophy.webp', 'webp/man.webp', 'webp/girl.webp', 'webp/nerd.webp',
+                'webp/szkola.webp', 'webp/tatuaze.webp', 'webp/inicjacja.webp', 'webp/gs.webp',
+                'webp/gs1.webp', 'webp/wackout.webp', 'webp/rp1.webp', 'webp/hp1.webp',
+                'webp/rp2.webp', 'webp/hp2.webp', 'webp/rp3.webp', 'webp/hp3.webp',
+                'webp/rp4.webp', 'webp/rp4.webp', 'webp/rp5.webp', 'webp/hp5.webp',
+                'webp/rp6.webp', 'webp/hp6.webp', 'webp/hd.webp', 'webp/hd1.webp',
+                'webp/hd2.webp', 'webp/HA.webp', 'webp/hacap.webp', 'webp/hacap2.webp',
+                'webp/DT.webp', 'webp/dtcap.webp', 'webp/dtcap2.webp', 'webp/WN.webp',
+                'webp/wncap.webp', 'webp/wncap2.webp', 'webp/okcl.webp', 'webp/okc.webp',
+                'webp/okc2.webp', 'webp/cbl.webp', 'webp/cb.webp', 'webp/cb2.webp',
+                'webp/kcl.webp', 'webp/kc.webp', 'webp/kc2.webp', 'webp/ntb.webp'
             ];
-            pngImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
+
+            let loadedCount = 0;
+            const totalAssets = assetsToLoad.length;
+            const fillBar = document.getElementById('loadingBarFill');
+            const statusText = document.getElementById('loadingStatusText');
+
+            function updateProgress() {
+                loadedCount++;
+                const percent = Math.min(Math.floor((loadedCount / totalAssets) * 100), 100);
+                fillBar.style.width = percent + '%';
+                statusText.innerText = `Ładowanie zasobów... ${percent}%`;
+
+                if (loadedCount >= totalAssets) {
+                    setTimeout(() => {
+                        const overlay = document.getElementById('intro-overlay');
+                        overlay.style.opacity = '0';
+                        setTimeout(() => {
+                            overlay.style.display = 'none';
+                        }, 800);
+                    }, 400);
+                }
+            }
+
+            // Symulacja lub faktyczne ładowanie
+            assetsToLoad.forEach(src => {
+                const ext = src.split('.').pop().toLowerCase();
+                if (ext === 'webm') {
+                    const video = document.createElement('video');
+                    video.src = src;
+                    video.onloadeddata = updateProgress;
+                    video.onerror = updateProgress;
+                } else {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = updateProgress;
+                    img.onerror = updateProgress;
+                }
             });
+
+            // Awaryjny timeout w razie gdyby przeglądarka zablokowała zdalne assety
+            setTimeout(() => {
+                const overlay = document.getElementById('intro-overlay');
+                if (overlay.style.display !== 'none') {
+                    fillBar.style.width = '100%';
+                    statusText.innerText = `Ładowanie zakończone!`;
+                    setTimeout(() => {
+                        overlay.style.opacity = '0';
+                        setTimeout(() => { overlay.style.display = 'none'; }, 800);
+                    }, 300);
+                }
+            }, 3000);
         }
-        window.addEventListener('load', preloadPngImages);
 
         function hideAllViews() {
             document.getElementById('selection-grid').style.display = 'none';
