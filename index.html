@@ -1,0 +1,3337 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podstawy Gry - 83 Hoover Criminals Gang</title>
+	
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PODSTAWY GRY - W/S 83 Hoover Criminals Gang">
+    <meta property="og:description" content="Pełny poradnik gry jako cywil/hoodgirl albo member setu 83' Hoover Criminals Gang">
+    <meta property="og:image" content=""> 
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="83HCG ACADEMY">
+    <meta name="theme-color" content="#eb6e1f">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PODSTAWY GRY - W/S 83 Hoover Criminals Gang">
+    <meta name="twitter:description" content="Pełny poradnik gry jako cywil/hoodgirl albo member setu 83' Hoover Criminals Gang">
+    <meta name="twitter:image" content="">
+
+    <style>
+        :root {
+            --primary-glow: #eb6e1f;
+            --secondary-glow: #ff3300;
+            --accent-red: #d9534f;
+            --bg-dark: #070707;
+            --panel-bg: rgba(18, 16, 16, 0.9);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(235, 110, 31, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 10% 80%, rgba(217, 83, 79, 0.05) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 100% 4px;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23eb6e1f" stroke-width="2"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="1" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="23" y2="12"/><circle cx="12" cy="12" r="1" fill="%23eb6e1f"/></svg>') 12 12, auto;
+        }
+
+        a, button, .card-option, .category-card, .sub-card, .subtopic-card, .back-btn, .zoom-ctrl-btn, .sequential-gender-card, .mini-visual-card, .affil-interactive-box, .affil-caps-trigger, .modal-nav-btn {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23d9534f" stroke="%23ffffff" stroke-width="1"><circle cx="12" cy="12" r="6"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>') 12 12, pointer !important;
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            z-index: 999;
+            background-size: 100% 4px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 20px 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        /* PŁYNNE ANIMACJE SLIDE-UP */
+        .zoom-in {
+            animation: gtaSlideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes gtaSlideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.96);
+                filter: blur(4px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary-glow);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 20px -10px rgba(235, 110, 31, 0.2);
+        }
+
+        .logo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 3px;
+        }
+
+        .logo-hint {
+            font-size: 9px;
+            line-height: 1.2;
+            color: #a8a8a8;
+            letter-spacing: 0.35px;
+            font-family: monospace;
+            margin-left: 2px;
+            text-shadow: none;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            text-shadow: 0 0 15px rgba(217, 83, 79, 0.5);
+            transition: text-shadow 0.3s;
+        }
+        .logo:hover {
+            text-shadow: 0 0 25px rgba(235, 110, 31, 0.8);
+        }
+
+        .logo span { color: #ffffff; }
+
+        .gang-archive-tag {
+            font-size: 11px;
+            color: var(--primary-glow);
+            letter-spacing: 2px;
+            font-family: monospace;
+            font-weight: bold;
+            background: rgba(235, 110, 31, 0.08);
+            padding: 6px 12px;
+            border: 1px solid rgba(235, 110, 31, 0.3);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(235, 110, 31, 0.15);
+        }
+
+        .main-hero {
+            text-align: center;
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+        }
+
+        .main-hero h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 25px rgba(235, 110, 31, 0.4);
+        }
+
+        .main-hero p {
+            color: #999;
+            font-size: 15px;
+            margin: 0;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-bar {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(235, 110, 31, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .reset-btn, .zoom-out-btn {
+            background-color: #1a1a1a;
+            color: var(--primary-glow);
+            border: 1px solid var(--primary-glow);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 12px rgba(235, 110, 31, 0.25);
+        }
+
+        .reset-btn:hover, .zoom-out-btn:hover {
+            background-color: var(--primary-glow);
+            color: #000;
+            box-shadow: 0 0 20px rgba(235, 110, 31, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card-option {
+            background-color: var(--panel-bg);
+            backdrop-filter: blur(8px);
+            border: 2px solid #222;
+            border-radius: 12px;
+            padding: 35px 30px;
+            text-align: left;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-option.full-width-card {
+            grid-column: 1 / -1;
+            border-color: var(--primary-glow);
+            background: linear-gradient(135deg, rgba(235, 110, 31, 0.12) 0%, rgba(18, 16, 16, 0.9) 100%);
+        }
+
+        .card-option::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-glow);
+            transition: width 0.3s ease, background 0.3s ease;
+        }
+
+        .card-option:hover {
+            border-color: var(--primary-glow);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 15px 40px rgba(235, 110, 31, 0.3);
+            background-color: #161413;
+        }
+
+        .card-option:hover::before {
+            width: 8px;
+            background: var(--secondary-glow);
+            box-shadow: 0 0 15px var(--secondary-glow);
+        }
+
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(235, 110, 31, 0.4));
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-desc {
+            font-size: 14.5px;
+            font-weight: 500;
+            color: #b5b5b5;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .card-action-btn {
+            background: rgba(235, 110, 31, 0.15);
+            border: 1px solid var(--primary-glow);
+            color: var(--primary-glow);
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            align-self: flex-start;
+            transition: all 0.3s ease;
+        }
+
+        .card-option:hover .card-action-btn {
+            background: var(--primary-glow);
+            color: #000;
+            box-shadow: 0 0 15px rgba(235, 110, 31, 0.6);
+        }
+
+        .categories-grid {
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .category-card {
+            background-color: var(--panel-bg);
+            backdrop-filter: blur(8px);
+            border: 2px solid #222;
+            border-top: 4px solid var(--primary-glow);
+            border-radius: 10px;
+            padding: 22px 18px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .category-thumb {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            border: 1px solid #333;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary-glow);
+            background-color: #181615;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(235, 110, 31, 0.35);
+        }
+
+        @property --glow-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @keyframes rotateNeonGlow {
+            0% { --glow-angle: 0deg; }
+            100% { --glow-angle: 360deg; }
+        }
+
+        .category-card.active-category {
+            background-color: #181615;
+            border-color: transparent !important;
+            box-shadow: 0 0 30px rgba(235, 110, 31, 0.7);
+        }
+
+        .category-card.active-category::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 12px;
+            padding: 3px;
+            background: conic-gradient(from var(--glow-angle), var(--primary-glow), #ffaa00, var(--secondary-glow), var(--primary-glow));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: rotateNeonGlow 3s linear infinite;
+            z-index: -1;
+        }
+
+        .category-card.full-width-banner {
+            grid-column: 1 / -1;
+            width: 100%;
+            box-sizing: border-box;
+            transform-origin: center center;
+        }
+
+        .cat-anim-1 {
+            animation: fluidSlideRight 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes fluidSlideRight {
+            0% { opacity: 0; transform: translateX(-120px) scaleX(0.7); filter: blur(10px); }
+            60% { filter: blur(2px); }
+            100% { opacity: 1; transform: translateX(0) scaleX(1); filter: blur(0); }
+        }
+
+        .cat-anim-2 {
+            animation: fluidExpandCenter 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes fluidExpandCenter {
+            0% { opacity: 0; transform: scaleX(0.3) scaleY(0.8); filter: blur(10px); }
+            60% { filter: blur(2px); }
+            100% { opacity: 1; transform: scaleX(1) scaleY(1); filter: blur(0); }
+        }
+
+        .cat-anim-3 {
+            animation: fluidSlideLeft 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        @keyframes fluidSlideLeft {
+            0% { opacity: 0; transform: translateX(120px) scaleX(0.7); filter: blur(10px); }
+            60% { filter: blur(2px); }
+            100% { opacity: 1; transform: translateX(0) scaleX(1); filter: blur(0); }
+        }
+
+        .category-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 8px rgba(235, 110, 31, 0.5));
+        }
+
+        .category-title {
+            font-size: 14px;
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .category-desc-preview {
+            font-size: 11.5px;
+            font-weight: 500;
+            color: #bbb;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .category-count {
+            font-size: 11px;
+            color: var(--primary-glow);
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        .mini-visual-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .mini-visual-card {
+            background-color: #141211;
+            border: 2px solid #2a221e;
+            border-radius: 10px;
+            height: 160px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .mini-visual-card:hover {
+            border-color: var(--primary-glow);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 0 20px rgba(235, 110, 31, 0.4);
+        }
+
+        .mini-visual-thumb {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            z-index: 1;
+        }
+
+        .mini-visual-card:hover .mini-visual-thumb {
+            transform: scale(1.06);
+        }
+
+        .hoodgirls-feature-card {
+            width: min(100%, 360px); 
+            height: 220px; 
+            min-height: 220px;
+            border-color: var(--primary-glow);
+            position: relative;
+        }
+        .hoodgirls-feature-card .mini-visual-content {
+            padding: 15px 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 70%, transparent 100%);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .hoodgirls-feature-card .mini-visual-title { 
+            font-size: 15px; 
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 2px 4px #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hoodgirls-return-wrap { display:flex; justify-content:center; margin:28px 0 8px; }
+        .hoodgirls-return-btn { background:rgba(235,110,31,.16); color:var(--primary-glow); border:2px solid var(--primary-glow); border-radius:8px; padding:14px 24px; font-weight:900; cursor:pointer; }
+        .hoodgirls-return-btn:hover { background:var(--primary-glow); color:#111; }
+
+        .mini-visual-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(7, 7, 7, 0.92) 0%, rgba(7, 7, 7, 0.4) 60%, rgba(7, 7, 7, 0.1) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .mini-visual-content {
+            position: relative;
+            z-index: 3;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .mini-visual-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+            margin: 0;
+        }
+
+        .mini-visual-badge {
+            font-family: monospace;
+            font-size: 10px;
+            color: var(--primary-glow);
+            background: rgba(235, 110, 31, 0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            border: 1px solid rgba(235, 110, 31, 0.4);
+            font-weight: bold;
+        }
+
+        .subcards-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* SEKWEŃCYJNY WIDOK (MĘŻCZYZNA / KOBIETA) */
+        .sequential-container {
+            display: none;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .sequential-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .sequential-gender-card {
+            background-color: #141211;
+            border: 2px solid #2a221e;
+            border-radius: 14px;
+            height: 380px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.8);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .sequential-gender-card:hover {
+            border-color: var(--primary-glow);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 0 35px rgba(235, 110, 31, 0.5);
+        }
+
+        .sequential-gender-thumb {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .sequential-gender-card:hover .sequential-gender-thumb {
+            transform: scale(1.05);
+        }
+
+        .sequential-gender-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(7, 7, 7, 0.95) 0%, rgba(7, 7, 7, 0.5) 50%, rgba(7, 7, 7, 0.2) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .sequential-gender-content {
+            position: relative;
+            z-index: 3;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sequential-gender-title {
+            font-size: 22px;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            margin: 0;
+        }
+
+        .sequential-gender-soon {
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--primary-glow);
+            background: rgba(235, 110, 31, 0.2);
+            padding: 4px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(235, 110, 31, 0.5);
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .content-panel {
+            display: none;
+            background-color: var(--panel-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid #222;
+            border-left: 4px solid var(--primary-glow);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            min-height: 480px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+
+        .topic-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .topic-header-bar h2 {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+
+        .content-panel .topic-body {
+            color: #d0d0d0;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.85;
+            letter-spacing: 0.12px;
+            white-space: pre-line;
+            margin-top: 18px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .content-panel .topic-body b {
+            color: #f0b080;
+            font-weight: 650;
+            text-shadow: none;
+        }
+
+        .topic-sequence-controls { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:28px; padding-top:18px; border-top:1px solid #33251e; }
+        .topic-sequence-controls button { background:rgba(235,110,31,.14); color:var(--primary-glow); border:1px solid var(--primary-glow); border-radius:7px; padding:12px 18px; font-weight:800; letter-spacing:.4px; }
+        .topic-sequence-controls button:hover { background:var(--primary-glow); color:#000; }
+        .topic-sequence-progress { color:#aaa; font:12px monospace; text-align:center; }
+
+        .images-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .topic-image-wrapper {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            cursor: pointer;
+        }
+
+        .topic-image {
+            max-width: 100%;
+            max-height: 350px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #333;
+            display: block;
+            transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .topic-image-wrapper:hover .topic-image {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+            box-shadow: 0 0 20px rgba(235, 110, 31, 0.4);
+        }
+
+        .topic-image-wrapper::after {
+            content: "🔍 Kliknij, aby powiększyć";
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.85);
+            color: var(--primary-glow);
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 4px;
+            border: 1px solid rgba(235, 110, 31, 0.5);
+            pointer-events: none;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .topic-image-wrapper:hover::after {
+            opacity: 1;
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 0 10px rgba(235, 110, 31, 0.5);
+        }
+
+        /* SEKCJA INTERAKTYWNA DLA 6 AFILACJI */
+        .affil-item-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(235, 110, 31, 0.25);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .affil-item-row:hover {
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 15px rgba(235, 110, 31, 0.2);
+        }
+
+        .affil-top-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .affil-interactive-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #141211;
+            border: 2px solid #2a221e;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .affil-interactive-box:hover {
+            border-color: var(--primary-glow);
+            background: #1b1715;
+            box-shadow: 0 0 15px rgba(235, 110, 31, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .affil-logo-preview-thumb {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            background: #0a0a0a;
+            border-radius: 6px;
+            border: 1px solid var(--primary-glow);
+            padding: 3px;
+            box-sizing: border-box;
+        }
+
+        .affil-interactive-info h4 {
+            margin: 0 0 4px 0;
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .affil-interactive-info p {
+            margin: 0;
+            color: #aaa;
+            font-size: 12px;
+            font-family: monospace;
+        }
+
+        .affil-caps-trigger {
+            background: rgba(235, 110, 31, 0.15);
+            border: 1px solid var(--primary-glow);
+            color: var(--primary-glow);
+            width: 65px;
+            height: 60px;
+            border-radius: 10px;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(235, 110, 31, 0.2);
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .affil-caps-trigger:hover {
+            background: var(--primary-glow);
+            box-shadow: 0 0 20px rgba(235, 110, 31, 0.7);
+            transform: scale(1.06);
+        }
+
+        .affil-desc-text {
+            color: #ccc;
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin: 5px 0 0 0;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+            padding-top: 10px;
+            font-family: monospace;
+        }
+
+        /* LIGHTBOX MODAL Z INTERAKTYWNYM ZOOMEM I PRZESUWANIAM */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.94);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            animation: fadeInModal 0.3s ease forwards;
+        }
+
+        @keyframes fadeInModal {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .image-modal-viewport {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: grab;
+            position: relative;
+        }
+
+        .image-modal-viewport:active {
+            cursor: grabbing;
+        }
+
+        .image-modal-content {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 8px;
+            border: 2px solid var(--primary-glow);
+            box-shadow: 0 0 50px rgba(235, 110, 31, 0.5);
+            object-fit: contain;
+            transform-origin: center center;
+            transition: transform 0.05s ease-out;
+            user-select: none;
+        }
+
+        .image-modal-controls {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 10000;
+        }
+
+        .zoom-ctrl-btn {
+            background-color: #1a1a1a;
+            color: var(--primary-glow);
+            border: 1px solid var(--primary-glow);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+            box-shadow: 0 0 12px rgba(235, 110, 31, 0.3);
+        }
+
+        .zoom-ctrl-btn:hover {
+            background-color: var(--primary-glow);
+            color: #000;
+            box-shadow: 0 0 20px rgba(235, 110, 31, 0.7);
+        }
+
+        .image-modal-close {
+            color: var(--primary-glow);
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+            padding: 0 5px;
+            text-shadow: 0 0 10px rgba(235, 110, 31, 0.5);
+        }
+
+        .image-modal-close:hover {
+            color: #ffffff;
+        }
+
+        .modal-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--primary-glow);
+            border: 1px solid var(--primary-glow);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            font-weight: bold;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: all 0.2s;
+            box-shadow: 0 0 15px rgba(235, 110, 31, 0.4);
+        }
+
+        .modal-nav-btn:hover {
+            background-color: var(--primary-glow);
+            color: #000;
+            box-shadow: 0 0 25px rgba(235, 110, 31, 0.8);
+        }
+
+        #modalPrevBtn { left: 25px; }
+        #modalNextBtn { right: 25px; }
+
+        .zoom-hint {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #aaa;
+            font-family: monospace;
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            pointer-events: none;
+            box-shadow: 0 0 15px rgba(0,0,0,0.8);
+        }
+
+        footer {
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 20px;
+            color: #666;
+            font-size: 12px;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .selection-grid, .categories-grid, .sequential-grid, .mini-visual-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .subcards-grid, .subtopics-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .topic-header-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div>
+            <header>
+                <div class="logo-wrap">
+                    <a class="logo" href="#" onclick="playSound(); showHomeView()">PORADNIK <span>HOOD RP ~ CYG4R</span></a>
+                    <div class="logo-hint">Kliknij aby wrócić do początku</div>
+                </div>
+				<a href="https://cyg4r.github.io/UnitedGangs-83HooverCriminalsGang/" target="_blank" class="gang-archive-tag" style="text-decoration: none; display: inline-block;">OFICJALNA STRONA GANGU // MAPA, CZŁONKOWIE, WSZYSTKO (Kliknij Tutaj)</a>
+            </header>
+
+            <div id="nav-bar" class="nav-bar">
+                <button class="zoom-out-btn" id="zoomOutBtn" onclick="playSound(); handleZoomOut()">⬅ Cofnij</button>
+                <button class="reset-btn" onclick="playSound(); showHomeView()">↺ Strona Główna</button>
+            </div>
+        </div>
+
+        <main id="main-container">
+            <div id="main-hero" class="main-hero">
+                <h1>Podstawy Gry South Central Nerds/Bangers</h1>
+                <p>Wybierz ścieżkę szkoleniową, aby rozpocząć swoją drogę na Hoodzie.</p>
+            </div>
+
+            <div id="selection-grid" class="selection-grid">
+                <div id="card-lore" class="card-option full-width-card" onclick="playSound(); openTopic('LORE')">
+                    <div>
+                        <div class="card-icon">📜</div>
+                        <div class="card-title">LORE Gangu 83 Hoover Criminals Gang</div>
+                        <div class="card-desc">Poznaj pełną historię, korzenie oraz ewolucję 83 Hoover Criminals Gang in South Central Los Angeles. Niezbędna wiedza historyczna dla każdego członka setu. W końcu musisz wiedzieć kim jesteś oraz historię swojego gangu. Ta wiedza pozwoli ci identyfikować się z gangiem.</div>
+                    </div>
+                    <div class="card-action-btn">Sprawdź Lore Gangu →</div>
+                </div>
+
+                <div id="card-sequential" class="card-option" onclick="playSound(); loadModule('sequential')">
+                    <div>
+                        <div class="card-icon">📘</div>
+                        <div class="card-title">Podstawy od zera po kolei</div>
+                        <div class="card-desc">Poradnik krok po kroku. Idealny dla początkujących osób które chcą wejść w świat HoodRP. Poradnik też jest dobry dla osób które chcą odświeżyć wiedzę.</div>
+                    </div>
+                    <div class="card-action-btn">Rozpocznij naukę od zera →</div>
+                </div>
+
+                <div id="card-research" class="card-option" onclick="playSound(); loadModule('research')">
+                    <div>
+                        <div class="card-icon">🔍</div>
+                        <div class="card-title">Wolny Research</div>
+                        <div class="card-desc">Baza wiedzy tematycznej podzielona na kategorie. Przeglądaj konkretne zagadnienia które cie interesują oraz przeglądaj wszystko do woli.</div>
+                    </div>
+                    <div class="card-action-btn">Przeglądaj luźną bazę →</div>
+                </div>
+            </div>
+
+            <div id="categories-grid" class="categories-grid">
+                <div id="cat-1" class="category-card" onclick="playSound(); selectCategory(1)">
+                    <img src="png/kat1.png" alt="Postać" class="category-thumb" onerror="this.style.display='none'">
+                    <div>
+                        <div class="category-icon">👤</div>
+                        <div class="category-title">POSTAĆ ~ OGÓLNE ZACHOWANIA + ROLEPLAY</div>
+                        <div class="category-desc-preview">Opis kategorii: Zachowania, ubiór i uzależnienia.</div>
+                    </div>
+                    <div class="category-count">9 TEMATÓW</div>
+                </div>
+
+                <div id="cat-2" class="category-card" onclick="playSound(); selectCategory(2)">
+                    <img src="png/kat2.png" alt="Gang" class="category-thumb" onerror="this.style.display='none'">
+                    <div>
+                        <div class="category-icon">🍊</div>
+                        <div class="category-title">GANG ~ WSZYSTKO O GANGACH</div>
+                        <div class="category-desc-preview">Opis kategorii: Slang, spoty, relacje, afiliacje i struktury uliczne.</div>
+                    </div>
+                    <div class="category-count">8 TEMATÓW</div>
+                </div>
+
+                <div id="cat-3" class="category-card" onclick="playSound(); selectCategory(3)">
+                    <img src="png/kat3.png" alt="Member" class="category-thumb" onerror="this.style.display='none'">
+                    <div>
+                        <div class="category-icon">🔫</div>
+                        <div class="category-title">MEMBER ~ GRANIE CZŁONKA GANGU</div>
+                        <div class="category-desc-preview">Opis kategorii: Generacje, inicjacje, tatuaże i zasady dyscyplinarne.</div>
+                    </div>
+                    <div class="category-count">8 TEMATÓW</div>
+                </div>
+            </div>
+
+            <!-- KATEGORIA 1: POSTAĆ -->
+            <div id="subgrid-1" class="subcards-grid">
+                <div class="mini-visual-grid" style="grid-column: 1 / -1;">
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('UZALEŻNIENIA')">
+                        <img src="png/drug.png" alt="Uzależnienia" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Uzależnienia</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('UBIÓR')">
+                        <img src="png/ubior.png" alt="Ubiór" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Ubiór</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('SŁABOŚCI POSTACI')">
+                        <img src="png/slabosc.png" alt="Słabości Postaci" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Słabości Postaci</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+					<div class="mini-visual-card" onclick="playSound(); openTopic('Historia Postaci')">
+                        <img src="png/story.png" alt="Historia Postaci" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Historia Postaci</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+					<div class="mini-visual-card" onclick="playSound(); openTopic('Hood Names')">
+                        <img src="png/hoodnames1.png" alt="Hood Names" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Hood Names</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+					<div class="mini-visual-card" onclick="playSound(); openTopic('Nuda')">
+                        <img src="png/nuda.png" alt="Nuda" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Nuda...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+				    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Grzeczni Ludzie')">
+                        <img src="png/grzeczni.png" alt="Grzeczni Ludzie" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Grzeczni Ludzie...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('School')">
+                        <img src="png/school.png" alt="School" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">school...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Cops')">
+                        <img src="png/lapd.png" alt="Cops" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Cops...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KATEGORIA 2: GANG -->
+            <div id="subgrid-2" class="subcards-grid">
+                <div class="mini-visual-grid" style="grid-column: 1 / -1;">
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Slang/Lingo')">
+                        <img src="png/slang.png" alt="Slang/Lingo" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Slang & Lingo...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Hangout/Spots')">
+                        <img src="png/spot.png" alt="Hangout/Spots" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Hangout & Spots...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Gang Signy')">
+                        <img src="png/gsm.png" alt="Gang Signy" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Gang Signy...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Relacje')">
+                        <img src="png/relacje.png" alt="Relacje" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Relacje...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Affilacja')">
+                        <img src="png/affilacje.png" alt="Affilacja" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Affilacje...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Hood Days')">
+                        <img src="png/hoodday.png" alt="Hood Days" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Hood Days...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Podział')">
+                        <img src="png/podział.gif" alt="Podział" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Podziały...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Wackouts')">
+                        <img src="png/wackouts.gif" alt="Wackouts" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Wackouts...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KATEGORIA 3: MEMBER -->
+            <div id="subgrid-3" class="subcards-grid">
+                <div class="mini-visual-grid" style="grid-column: 1 / -1;">
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Generacje')">
+                        <img src="png/generacje.png" alt="Generacje" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Generacje</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Inicjacje')">
+                        <img src="png/ini.gif" alt="Inicjacje" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Inicjacje</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Tatuaże')">
+                        <img src="png/tatuaz.png" alt="Tatuaże" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Tatuaże / Eyebusters</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Ranker Behavior')">
+                        <img src="png/rb.gif" alt="Ranker Behavior" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Ranker Behavior...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('DP')">
+                        <img src="png/dp.gif" alt="DP" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Disciplinary Punishment...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Zachowania')">
+                        <img src="png/graf.gif" alt="Zachowania" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Zachowania...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+					<div class="mini-visual-card" onclick="playSound(); openTopic('Graffiti')">
+                       <img src="png/graffiti.gif" alt="Graffiti" class="mini-visual-thumb" onerror="this.style.display='none'">
+                       <div class="mini-visual-overlay"></div>
+                       <div class="mini-visual-content">
+                           <div class="mini-visual-title">Graffiti...</div>
+                           <div class="mini-visual-badge">Sprawdź</div>
+                       </div>
+                   </div>
+                    <div class="mini-visual-card" onclick="playSound(); openTopic('Zmiany')">
+                        <img src="png/trophy.png" alt="Zmiany" class="mini-visual-thumb" onerror="this.style.display='none'">
+                        <div class="mini-visual-overlay"></div>
+                        <div class="mini-visual-content">
+                            <div class="mini-visual-title">Zmiany...</div>
+                            <div class="mini-visual-badge">Sprawdź</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WIDOK SEKWENCYJNY (MĘŻCZYZNA / KOBIETA) -->
+            <div id="sequential-view" class="sequential-container">
+                <div class="topic-header-bar">
+                    <h1 id="sequential-heading">📘 Wybierz Płeć Postaci 📘</h1>
+                </div>
+                <div id="gender-selection-grid" class="sequential-grid">
+                    <div class="sequential-gender-card" onclick="playSound(); selectGender('man')">
+                        <img src="png/man.png" alt="Mężczyzna" class="sequential-gender-thumb" onerror="this.style.display='none'">
+                        <div class="sequential-gender-overlay"></div>
+                        <div class="sequential-gender-content">
+                            <div class="sequential-gender-title">Mężczyzna</div>
+                            <div class="sequential-gender-soon">Wybierz</div>
+                        </div>
+                    </div>
+                    <div class="sequential-gender-card" onclick="playSound(); selectGender('girl')">
+                        <img src="png/girl.png" alt="Kobieta" class="sequential-gender-thumb" onerror="this.style.display='none'">
+                        <div class="sequential-gender-overlay"></div>
+                        <div class="sequential-gender-content">
+                            <div class="sequential-gender-title">Kobieta</div>
+                            <div class="sequential-gender-soon">Wybierz</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="man-subcategories-grid" class="sequential-grid" style="display: none;">
+                    <div class="sequential-gender-card" onclick="playSound(); startSequentialPath('nerd')">
+                        <img src="png/nerd.png" alt="Nerd = Cywil" class="sequential-gender-thumb" onerror="this.style.display='none'">
+                        <div class="sequential-gender-overlay"></div>
+                        <div class="sequential-gender-content">
+                            <div class="sequential-gender-title">Cywil <br><br> (Nerd)</div>
+                            <div class="sequential-gender-soon">Podstawowe informacje tylko pod gre CYWILA <br><br> Wybierz jak chcesz być tylko NERDEM</div>
+                        </div>
+                    </div>
+                    <div class="sequential-gender-card" onclick="playSound(); startSequentialPath('befora')">
+                        <img src="png/man.png" alt="Before-Put On / Banger" class="sequential-gender-thumb" onerror="this.style.display='none'">
+                        <div class="sequential-gender-overlay"></div>
+                        <div class="sequential-gender-content">
+                            <div class="sequential-gender-title">Aspirujący Banger <br><br> (Before-Put On)</div>
+                            <div class="sequential-gender-soon">Informacje pomijające informacje o graniu "Nerda" skupiając się na rzeczach głównie gangowych. <br><br> Wybierz jak nauczyłeś się grać NERDA i chcesz przejść na ścieżkę BANGERA <br><br> Ścieżka nie pomija informacji o kreowaniu postaci!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PEŁNY WIDOK TREŚCI TEMATU -->
+            <div id="topic-view" class="content-panel">
+                <div class="topic-header-bar">
+                    <h2 id="topic-title">
+                        <span id="topic-title-text">---</span>
+                    </h2>
+                </div>
+                <div class="topic-body" id="topicBodyContent"></div>
+                <div id="topicImageContainer"></div>
+                <div id="topic-sequence-controls" class="topic-sequence-controls" style="display:none;">
+                    <button type="button" id="topicPreviousBtn" onclick="playSound(); previousSequentialTopic()">← Poprzedni temat</button>
+                    <div id="topic-sequence-progress" class="topic-sequence-progress"></div>
+                    <button type="button" id="topicNextBtn" onclick="playSound(); nextSequentialTopic()">Następny temat →</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <span>CREATED BY CYG4R</span>
+        </footer>
+    </div>
+
+    <!-- MODAL DO POWIĘKSZANIA ZDJĘĆ / GALERII -->
+    <div id="imageModal" class="image-modal" onclick="checkCloseModal(event)">
+        <div class="image-modal-controls">
+            <button class="zoom-ctrl-btn" onclick="zoomInModal(event)" title="Przybliż">+</button>
+            <button class="zoom-ctrl-btn" onclick="zoomOutModal(event)" title="Oddal">–</button>
+            <span class="image-modal-close" onclick="closeImageModal()" title="Zamknij">&times;</span>
+        </div>
+        <button class="modal-nav-btn" id="modalPrevBtn" onclick="prevModalImage(event)" title="Poprzednie zdjęcie">&#10094;</button>
+        <button class="modal-nav-btn" id="modalNextBtn" onclick="nextModalImage(event)" title="Następne zdjęcie">&#10095;</button>
+        <div class="image-modal-viewport" id="modalViewport">
+            <img class="image-modal-content" id="modalImg" draggable="false">
+        </div>
+        <div class="zoom-hint">Użyj scrollołka myszy lub przycisków [+] [-] do zoomu • Przeciągnij myszą, aby przesunąć</div>
+    </div>
+
+    <script>
+        let audioCtx = null;
+        function playSound() {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(520, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(280, audioCtx.currentTime + 0.07);
+                
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.07);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.07);
+            } catch(e) {}
+        }
+
+        const categoryTopicsMap = {
+            1: ['UZALEŻNIENIA', 'UBIÓR', 'SŁABOŚCI POSTACI', 'Historia Postaci', 'Hood Names', 'Nuda', 'Grzeczni Ludzie', 'School', 'Cops', 'HoodGirls'],
+            2: ['Slang/Lingo', 'Hangout/Spots', 'Gang Signy', 'Relacje', 'Affilacja', 'Hood Days', 'Podział', 'Wackouts'],
+            3: ['Generacje', 'Inicjacje', 'Tatuaże', 'Rakner Behavior', 'DP', 'Zachowania', 'Graffiti' , 'Zmiany']
+        };
+
+        const defaultTopicsData = {
+            'LORE': 
+`• OGÓLNIE O 83 HOOVER CRIMINALS GANG
+W/S 83 Hoover Criminals Gang [Eight Tray Hoover, Tiny Rascalz, Shooter Gang] to gang uliczny, w przeważającej mierze afroamerykański, działający w zachodniej części Los Santos. Gang 83 Hoover Criminals wywodzi się z okolic skrzyżowania 83rd' Hoover Street [Strawberry Avenue 83rd'] pomiędzy Vermont Avenue a Figueroa Avenue. Grupa ta uważana jest za największą frakcję wchodzącą w skład szerszej struktury Hoover Criminal Gang. “Rascals” prowadzą działalność przestępczą od ponad 30 lat. Mimo licznych wrogów, gang dominuje w swojej dzielnicy, stosując brutalność i terror. Gang 83 Hoover Criminals utrzymuje sojusze ze wszystkimi grupami działającymi pod szyldem Hoover Criminals (szczególnie z 74 Hoover Criminals Gang ) a także z ShotGun Crips ( SGCs ) i Eight Tray Gangster Crips ( ETGC ) łączy ich wspólny wróg - Rollin’ 60’s Neighborhood Crips. Konflikt ten doprowadził do wielu ofiar śmiertelnych i strzelanin na tle gangsterskim. Choć od zawsze uchodzili za jeden z najbardziej aktywnych odłamów SCLA, w ostatnich latach gang 83HCG zyskanał dodatkowy rozgłos w mediach. Wynikało to z powiązania kilku ich nastoletnich członków z zabójstwem nowojorskiego rapera Pop Smoke’a, a także z pojawieniem się na scenie lokalnych raperów takich jak Tr3yway6K, IroKeZ, Young Threat, Selfmade BuddHa.
+                  
+• POCZĄTKI JAKO "HOOVER GROOVERS"
+Korzenie gangu Hoover Criminals sięgają grupy Hoover Groovers – ulicznego gangu działającego w zachodniej części dzielnicy South Central w Los Santos już w latach 60. XX wieku, a zatem jeszcze przed powstaniem formacji Crips. W tamtym okresie gangi w tym rejonie miały luźną strukturę i opierały się głównie na lokalnych społecznościach. Ich tożsamość była ściśle związana z konkretnymi ulicami czy ciągami zabudowy mieszkaniowej.
+
+Wczesny konflikt wewnętrzny wpłynął na dalsze losy Hoover Groovers. Po zabójstwie młodszego brata jednego z członków-założycieli podejrzenia początkowo padły na gang West Side Crips. W obliczu rosnącego napięcia przedstawiciele obu grup spotkali się w centrum rekrecznym Saint Andrews, położonym przy ulicy Saint Andrews Place, pomiędzy Manchester Boulevard a 89th Street. Po rozmowach obie strony uznały, że za zabójstwo odpowiada gang Figueroa Boys. Spotkanie to zaowocowało tymczasowym sojuszem między Hoover Groovers a West Side Crips. Wkrótce potem lider Figueroa Boys został zaatakowany w jednym z klubów nocnych w Los Santos, co doprowadziło do eskalacji wrogości między gangami w tym rejonie.
+
+• DALSZE LOSY JAKO "HOOVER CRIPS"  
+
+W połowie lat 70. grupa Hoover Groovers oficjalnie sprzymierzyła się z West Side Crips. W ramach tego sojuszu członkowie grupy porzucili nazwę „Groovers” i zaczęli funkcjonować jako Hoover Crips. Zmiana ta odzwierciedlała szersze procesy zachodzące w Los Santos, gdzie przynależność do struktur Crips w coraz większym stopniu kształtowała tożsamość gangów, a także układy sojuszy i rywalizacji.
+
+W 1979 roku wewnątrz Crips doszło do poważnego rozłamu, spowodowanego eskalacją konfliktu między Rollin 60s Neighborhood Crips a Eight Tray Gangster Crips. Gangi w całym Los Santos znalazły się pod presją opowiedzenia się po jednej ze stron. Grupy sprzymierzone z Rollin 60s przyjęły tożsamość Neighborhood Crips (często określaną mianem „Deuces”), natomiast te związane z Eight Trays przyjęły nazwę Gangster Crips (powszechnie znaną jako „Trays”). Gang Hoover Crips opowiedział się po stronie frakcji Gangster Crips, zyskując szeroką rozpoznawalność pod nazwą Hoover Gangster Crips.
+
+W sierpniu 1979 roku Raymond Washington, jeden z założycieli gangu Crips, zginął w wyniku strzelaniny przeprowadzonej z przejeżdżającego samochodu (tzw. *drive-by shooting*). Kwestia odpowiedzialności za to zabójstwo była szeroko dyskutowana w środowiskach gangów Los Santos. Członkowie East Side Crips oskarżyli Hoover Crips o udział w śmierci Washingtona – zarzut ten został jednak przez grupę Hoovera odrzucony. Niezależnie od tego, kto faktycznie odpowiadał za śmierć lidera, oskarżenie to doprowadziło do długotrwałego i krwawego konfliktu między Hoover Crips a East Side Crips. Spór ten znacząco poszerzył listę rywali gangu Hoovera i przyczynił się do wzrostu jego reputacji jako grupy niezwykle aktywnej i skłonnej do konfrontacji w okresie przełomu lat 70. i 80.
+
+
+W latach 80. pojawienie się cracku (kokainy w formie kryształów) radykalnie zmieniło charakter działalności gangów w południowo-środkowej części Los Santos (South Central). W tym okresie gang Hoover Gangster Crips mocno zaangażował się w uliczną dystrybucję narkotyków. Organy ścigania oraz media często wiązały tę grupę z zorganizowanym handlem narkotykami i przemocą z użyciem broni palnej. Znany handlarz narkotyków Ricky „Freeway” Ross utrzymywał w tamtym czasie kontakty z członkami Hoover Crips, co dodatkowo łączyło gang z sieciami dystrybucji narkotyków na dużą skalę. Do połowy lat 80. władze uznawały gang Hoovera za jedną z najbardziej aktywnych grup ulicznych działających w południowym Los Santos.
+
+• DALSZE LOSY JAKO "HOOVER CRIMINALS"
+
+Na początku lat 90. podziały wewnętrzne i konflikty zewnętrzne sprawiły, że wiele setów gangu Hoovera zaczeło dystansować się od szerszej tożsamości Crips. Kilka z tych frakcji oficjalnie porzuciło nazwę „Crips” i zaczęło określać się mianem Hoover Criminals. Zmianie tej towarzyszyło przyjęcie haseł ABK (*Anybody Killer* – zabójcy każdego) oraz EBK (*Everybody Killer* – zabójcy wszystkich), co sygnalizowało odrzucenie tradycyjnych sojuszy między gangami i przyjęcie agresywnej postawy wobec rywali. W tym okresie na graffiti pojawiających się na terenie kontrolowanym przez gang Hoovera często widniały oznaczenia takie jak BK (*Blood Killer* – zabójcy członków Bloods), CK (*Crip Killer* – zabójcy członków Crips) czy OK (*Rollin 0’s Killer* – zabójcy członków gangów z grupy Rollin 0’s), co odzwierciedlało pogarszające się relacje grupy zarówno z frakcjami Bloods, jak i Crips. Podejście gangu Hoover Criminals przypominało strategię stosowaną przez wiele meksykańsko-amerykańskich gangów ulicznych z południowego Los Santos, z których znaczna część ograniczała swoje sojusze do organizacji działających wewnątrz systemu więziennego. Gotowość członków Hoover do wchodzenia w konflikty z grupami takimi jak Bloods, Crips czy gangi latynoskie doprowadziła ostatecznie do zerwania wielu ich dotychczasowych sojuszy.`,
+
+            'UZALEŻNIENIA': 
+`• Jeśli twoja postać uzależni się od narkotyku 
+Musisz wziąć pod uwagę jego koszta, możesz odegrać że jesteś na głodzie narkotykowym i gdy nie masz cashu to jesteś bardzo zdeterminowany żeby go uzyskać albo zdobyć weed żeby zaspokoić swoją potrzebę! Chcemy abyś rozważył są uzależnienia i ich rzeczywiste koszty. Narkotyki które bierzesz bez najmniejszego zastanowienia się, Percs, zioło, alkohol czy tam inne używki - to wszystko kosztuje. 
+
+Jestem pewny że wielu ludzi w pewnym momencie wydało kilkaset dolarów na zioło które jest jednym z najtańszych narkotyków. Ale czy twoja postać faktycznie zrobiła rzeczy które musiałaby zrobić, aby móc sobie pozwolić na ten nawyk? W większości przypadków powiedziałbym, że nie. I właściwie to większość graczy odgrywa zażywanie narkotyków bez konsekwencji takich jak uzależnienie, lub nawet brak pieniędzy na następną działke. Odgrywanie bycia na haju regularnie i aktywnie pokazuje twój problem z tym właśnie narkotykiem. Możesz odegrywać że chcesz wyjść z uzależnienia, lub możesz odegrywać przeciwieństwo i robić wszystko aby zyskiwać pieniądze aby znowu być high.
+`,
+            
+            'UBIÓR': 
+`• Ogólny Ubiór 
+Jako biedny murzyn z hoodu przecież nie będziesz ubierał się w najbogatsze marki takie jak Bigness, Guffy lub Yeti. Powinieneś ubrać jakiegoś non-brandowego teesa lub jakiejś tańszej marki np. ProLaps. Nie ubieraj jakiegoś wielkiego chaina bo przecież to gówno kosztuje 5000$. Jeśli twoja postać nie zarabia wielkich pieniędzy to zastanów się czy chciałbyś wydać cały cash na jedną koszulkę. Powinieneś się zastanowić jaki budżet ma twoja postać i w co ją ubrać bo osoby które tylko by mogły ubierać wydripowane ciuchy to ci co zarabiają dużo cashu. 
+
+•  Brak Biżuterii (Anti-Floosing)
+Warto mieć na uwadze że bangerzy też nie chodzą jak królowie ulicy ubrani w chainy typu "0'Block #milion dollar chain" tylko dość casualowo "throwaway clothes (ubrania do wyrzucenia). Bo jeśli dojdzie do strzelaniny lub pościg, nie mogą rzucać się w oczy. Biżuterię i markowe rzeczy ubierają tylko na imprezy gangu lub Hood Day. Не oznacza to że nie można ubierać chainów lecz pamiętajcie o umiarze.
+
+• Throw'Away Clothes
+Z racji na tą politykę gangsterów jeżeli ktoś w grze śmieje się z was że nosicie old schoolowe ciuchy/ubieracie sie jak śmietniki "trash clothes" to są po prostu głupi i nie znają się na ulicznym ganglandzie w którym nie liczy się ubiór a przetrwanie na ulicy. Lecz każdy pressing słowny jest poprawną formą więc IC po prostu możecie pressować że ktoś wygląda jak śmietnik.`,
+
+            'SŁABOŚCI POSTACI': 
+`• Kiedy ostatnio celowo przegrałeś fade w którym nie miałeś szans?
+
+Pewnie większość z was nie zrobiła tego ani razu, skumaj to, gdy masz 17 lat i bijesz się z 22 latkiem który jest naturalnie silniejszy od ciebie nie ma fizycznej szansy abyś z nim wygrał fade (no chyba że jesteś np. boxerem). Wiadomo że każdy chce aby jego postać była najtwardsza. Pamiętaj że to również działa w taki sposób po postrzale, założę się, może raz odegrałeś słabość po takich ranach, ale czemu nie odegrasz np. że twoja postać trafia na wózek na 2 tygodnie? Albo na surgery na 12/24h? Naprawdę to urozmaici roleplay osobom wokół! 
+
+• Słabościami mogą być też uzależnienia które możecie wplatać w wątki i cały roleplay waszej postaci.`,
+
+            'Historia Postaci': 
+`• INDYWIDUALNOŚĆ
+
+Twoim priorytetem podczas gry w gangu powinno być stworzenie indywidualnej postaci, która się czymś różni od pozostałych.
+
+Najgorszym i najnudniejszym typem postaci jest ta, która jest młoda i zarazem porywcza, głodna beefu, nieczuła na wszystko bez względu na okoliczności i w dodatku łapie ciała na swoje konto zabijając wrogów. Ten typ postaci jest tak strasznie przesadzony, że RP naprawdę jest bolesne z taką osobą. Należy się zastanowić nad czymś innym.
+
+Mając to na uwadze oto kilka rzeczy do własnych przemyśleń. Spróbuj zadać następujące pytania samemu sobie:
+
+• Czego chce właściwie Twoja postać?
+Oczekuje szacunku, bogactwa, przyjaciół, bycia pod wpływem marihuany, posiadania rodziny bądź chłopaka czy dziewczyny. Osiągnięcia określonej pozycji w gangu? Ma obowiązki, czy musi zaspokajać uzależnienie od narkotyków, czy musi płacić za pewne rzeczy, bądź wspierać członka rodziny za kratami? A może umarła jej bliska osoba z gangu i dlatego chce się wkręcić na serio w gangland?
+
+• Jakie umiejętności posiada Twoja postać?
+Czy potrafi gotować, tatuować, strzyc włosy, rapować, uprawiać sport, dobrze walczyć?
+
+• Jaka jest osobowość Twojej postaci?
+Przyjrzyj się cechom postaci, wyobraź sobie że tworzysz postać tak jak w "The Sims" i musisz wybrać cechy które zawsze będą wpływały na życie postaci oraz nią samą. Cechy postaci pozwalają wybrać jak w danej sytuacji będzie zachowywać się twoja postać. Najważniejsze jest to, że bez względu na to jak chciałbyś zagrać jako gracz, zagraj tak jak chciałaby zrobić Twoja postać. Konsekwentnie trzymaj się założeń.
+
+• Dlaczego twoja postać w ogóle chce dołączyć do gangu?
+
+Dzieciaki dorastający w biednych dzielnicach otoczonych przez przestępstwa i przemoc, chcieliby dołączyć do gangu z kilku powodów:
+
+• Status
+• Ochrona
+• Uwzględnienie
+• Bycie buntownikiem
+• Bycie częścią czegoś wielkiego
+• Pokoleniowa tradycja
+• Kierowanie się wyborem kolegów
+
+Będąc członkiem gangu w tak młodym wieku przychodzi z dużym wzrostem statusu; są częścią czegoś wielkiego niż ellos, część czegoś, czym mogą się dumnie pochwalić, i wyróżniać się wśród innych ludzi w ich wieku. Są uważani jako coś 'niebezpiecznego' i są zagrożeniem dla innych ludzi w ich wieku nie powiązanych z działalnościami gangów.
+
+Członkowie gangów tworzą mocne braterskie więzi między sobą, i będą ochraniać siebie nawzajem. Ktoś kto jest na celowniku przez osobę lub grupę ma armię wsparcia i ochrony w formie innych członków gangu jeśli ktoś stanie się celem w ataku, silny i ostry odwet jest practicalnie gwarantowany.
+
+Jako osoba która dołączyła do gangu przeważnie pochodzi z zepsutego otoczenia z małym wsparciem, miłością i respektem ze strony rodziny, zwróci sie do przyjaciół żeby poczuć się uwzględnionym jako część czegoś. Podobnie jak to członkowie gangu formują mocne braterskie więzi, gang jako całość funkcjonuje jako duża rodzina.
+
+Często też z gangiem związana jest rodzina, kuzyni, bracia, siostry, ojciec, matka a to wiąże się z tym że młodziaszek też po prostu pójdziesz w te same ślady pokoleniowo.
+
+• MAJĄTEK
+
+Podczas gry musisz rozważać majątek swojej postaci, i to jak będzie się on zmniejszać, zwiększać lub pozostawać na podobnym poziomie. Powinieneś rozważyć jak twoje działania IC wpływają na twój majątek na realistycznym poziomie. Kilka rzeczy do rozważenia w tej dziedzinie:
+
+• Twój dochód
+Jedną z pierwszych rzeczy do rozważenia jest to, ile pieniędzy masz i zarabiasz IC. Powinieneś wziąć pod uwagę swój wiek, lub jak aktywnie zarabiasz nielegalnie pieniądze.
+
+Na przykład, jeżeli twoja postać ma +- 18 lat, jakie źródła dochodu może ona posiadać? Więc twoja postać może otrzymywać pieniądze od rodziców, ciotki, dziadków, możesz sprzedawać narkotyki gdy nie jesteś w szkole, lub robić to szkole. Jedynie jak możesz legalnie dorabiać to dorywczo kosząc trawniki. Oczywiście nie powinieneś oczekiwać, że będziesz zarabiał tony pieniędzy na ulicach, chyba że rzucisz całkowicie szkołę i zajmiesz się aktywną sprzedażą narkotyków albo fake-teesów. Możesz też otrzymywać pieniądze od rządu. Lecz głównie w tym punkcie chodzi o to aby mimo kupna IN-GAME dobrego auta nie robić z siebie wielkiego "Hustlera" bo grindujesz kasę! Pamiętaj że IRL byś tyle nie osiągnął i nawet posiadając fajną Buffalkę możesz mieć problemy finansowe albo problem czy zapłacić czynsz czy zatankować do pełna auto a może kupić broń bo jesteś Lackin?
+
+Głównym punktem który chce podkreślić jest to, że te rzeczy nie powinny być w najmniejszym stopniu “NPCtowane”. Za dużo “NPCtowania” dzieje się na serwerach, co sprawia wrażenie, że wszystko jest sztuczne i leniwe. Na przykład, jeżeli sprzedasz narkotyk jeden raz, powinieneś to odgrywać jako jedna sprzedaż narkotyków. Jeżeli pokażesz jeden screenshot z jednego drug deala, to znaczy że zarobiłeś tylko z tej jednej transakcji. Nie sprzedawaj pół uncji zioła, a potem udawaj że byłeś na zewnątrz robiąc drop offy codziennie przez ostatni tydzień, musisz to faktycznie zrobić.
+
+• Dlaczego nie ma tutaj tematu legalnej pracy?
+Pełne wytłumaczenie znajdziesz w (MEMBER ~ GRANIE CZŁONKA GANGU > #RANKER BEHAVIOR)
+
+• Mieszkania/Koszty utrzymania:
+Mieszkania w Long Beach są średnio droższe niż w LA. Mediana kosztów domu wynosi około 600k (lub więcej) dolarów, a średnia miesięczna cena za mieszkanie typu “studio” (Jeden ogromny pokój, tylko osobna łazienka) to $1300 miesięcznie. Za mieszkanie z 1 sypialnią - $1600, a za mieszkanie z 2 sypialniami - $2000. Musisz zastanowić się, czy twoja postać jest w stanie utrzymać swoje podstawowe koszty utrzymania i czy aktywnie grasz źródło dochodu, które ci na to pozwala. 
+
+Oczywiście nie oczekujemy od ciebie tego, że będzie obliczał cały budżet z dużą szczegółowością, przecież nie byłoby to w ogóle interesujące. Ale zawsze powinieneś mieć z tyłu głowy pytanie “Czy w tym momencie moją postać stać na to wszystko?” To wiąże się z następnym tematem.
+
+• Ubrania/Wydatki
+Wydatki to kolejny ważny czynnik. Zastanów się, ile tak naprawde kosztuje utrzymanie nawet bardzo małego mieszkania w South Central. Czy twoja postać zarabia więcej niż $1500 miesięcznie? Jeśli tak, to czy jej następnym ruchem będzie wydanie wszystkiego na jedną koszulkę? Może, ale raczej nie.
+
+Ogólnie to jest RolePlay nie oszukujmy się że każdy chce mieć wszystko lecz fajnie czasem w grze usłyszeć od kogoś że brakuje mu trochę kasy (nie że jest broke i nie ma nic) lecz po prostu braku finansowe bo potknięcia na hoodzie istnieją lecz w 83 Hoover Criminals Gang nie uznaje się bycia 'broke' musisz być aktywny, dokształcony, zawsze gotowy działać. tak jak pisałem to jest RP przyjmiemy kogoś kto gra broke murzyna lecz nawet odgrywanie biedniejszego musi się odbywać z głową!
+
+• HISTORIA POSTACI
+
+Najlepszymi postaciami są te, które mają za sobą jakąś historię. To czyni je indywidualnymi. Mają rzeczy do opowiedzenia, które im się przydarzyły.
+
+Wręcz przeciwnie postacie, które są nieciekawe to takie, które po prostu reagują na otaczający ich świat "tu i teraz". To gracze, którzy po prostu komentują to co się dzieje teraz. Nigdy nie rozpętaliby rozmowy o tym co robili, ani nie powiązali czegoś z czymś co wydarzyło się w ich historii.
+
+Aby tego uniknąć spróbuj pomyśleć o wydarzeniach życiowych, które się przydarzyły Twojej postaci i bądź gotów o nich rozmawiać. Spróbuj mówić o rodzinie. To inni kształtują to kim jesteś, niekoniecznie Ty sam więc niektóre cechy postaci mogą być działaniem przykładowo starszego brata.
+
+• Nie komentuj tylko najbliższego otoczenia;
+"Idą świnie."
+"Widziałeś, że ECC tagowali parę minut temu nam sekcje?"
+"W co próbujecie się władować?"
+
+• Rozmawiaj też o rzeczach poza swoim bezpośrednim otoczeniem nawet jak tego nie grałeś. Przecież Twoja postać nie istnieje tylko, gdy jesteś online.
+"Taa.. Jak byłem dzieckiem to.."
+"Pamiętasz hood day, gdy.."
+"Mike mi mówił, że.."
+"Moja mama wiele razy powtarzała.."
+"Byłem zeszłej nocy u dziewczyny na cribie, byliśmy.. później ona.. i czułem się jak.."
+"Damn shit, dziś w szkolę spotkałem..".`,
+
+            'Hood Names': 
+`Zanim zaczniesz przeglądać imiona, chcę wyjaśnić całą sprawę z członkami gangu, którzy dodają przed swoje imiona określenia typu „Big”, „Lil”, „Baby”, „Tiny”, „Infant” czy „Newborn”. Chodzi po prostu o to, żeby odróżnić jednego kumpla o tym samym imieniu od innego kumpla z dzielnicy. Dzięki temu nie ma zamieszania. Koleś jest „Big”, jeśli jest pierwszym z dzielnicy o danym imieniu. Ktokolwiek otrzyma to samo imię po nim, będzie „Lil”, zwany również „Numerem Dwóch”. „Baby” to „Numer Trzy”, „Tiny” to „Numer Cztery”, „Infant” to „Numer Pięć”, a „Newborn” to „Numer Sześć”.
+
+Przykłady: (W naszych przykładach użyjemy imienia Nitemare.)
+
+   •   Big Nitemare, znany również jako Nitemare #1 – pierwszy Nitemare z dzielnicy
+   •   Lil Nitemare, znany również jako Nitemare #2 – drugi Nitemare z dzielnicy
+   •   Baby Nitemare, znany również jako Nitemare #3 – trzeci Nitemare z dzielnicy
+   •   Tiny Nitemare, znany również jako Nitemare #4 – czwarty Nitemare z dzielnicy
+   •   Infant Nitemare, znany też jako Nitemare #5 – piąty Nitemare z dzielnicy
+   •   Newborn Nitemare, znany też jako Nitemare #6 – szósty Nitemare z dzielnicy 
+
+A tak przy okazji, jeśli któraś z dziewczyn dostanie taką samą nazwę jak któryś z chłopaków z dzielnicy, to zasada jest taka sama, tyle że przed nazwą dodaje się „Lady”. I dla dziewczyn wszystko zaczyna się od nowa. Zasadniczo, jeśli jest pięciu chłopaków o imieniu Nitemare, a potem dziewczyna dostanie tę nazwę, będzie się nazywać Big Lady Nitemare.
+
+Wskazówka: Niektóre imiona można uatrakcyjnić, dodając do nich różne przedrostki. Weźmy na przykład imię Tone. Można przed nim umieścić „Gangsta” (Gangsta Tone), „Brazy”/„Crazy” (Brazy Tone lub Crazy Tone) albo „Killa” (Killa Tone). Niektóre imiona można skrócić do zaledwie dwóch liter. Na przykład, jeśli wybrałeś imię Slikk? Dodaj przed nim „Gangsta”, aby uzyskać „Gangsta Slikk” i/lub „G-Slikk”. Teraz możesz posługiwać się skrótem GS.
+A jeśli twój pseudonim to „Bone”? Spróbuj dodać przed nim inicjał swojego imienia. Nazywasz się Eric? Cóż, teraz jesteś „E-Bone”. To samo dotyczy pseudonimu „Mack”. Możesz być „E-Mack”.
+
+• Names:
+Maniak/Maniac
+Tip Toe
+Slowpoke
+Braze
+Kricket/Cricket
+Gangsta Redd/G-Redd
+G-Sexx
+Knuckles
+Hangout
+Squabble
+G-Sexx
+Joker Face/J-Face
+Killa Tone/K-Tone (when real name’s Tony)
+Kowboy/Cowboy
+Slim
+Gangsta Slim/G-Slim
+Ray Dogg (when real name has Ray somewhere in it)
+Screwface
+Grim
+Grimlock
+Grinch
+Midnite / Midnight
+CK/Cee Kay
+BK/Bee Kay
+Batman
+B-Lok/C-Loc
+Frog
+Tall
+Popa Smurf
+Bang
+Snoop
+Snoopy
+Boom
+Pop Em
+Bad News
+Rock
+YG
+Woof
+Twin
+B-Mack/C-Mack
+Lady Bug
+Mouse
+Half Dead
+Loot
+Peanut
+Skrap/Scrap
+Loko/Loco
+Killa
+Moo Moo
+Sed-G/Ced-G (when real name is Cedric)
+Blak/Blac
+Pak-Man/Pac-Man
+Playboy
+Block/Blocc
+Monster
+Ragger
+Flag
+Gangsta Young/G-Young
+Gamble
+Reaper
+Looney
+Fathead
+Nasty
+Killa Face/K-Face
+Fatdog
+B-Dogg/C-Dogg
+Roach
+Half Pint
+Bad Luck
+Rick Rock
+Kapone/Capone
+Too Tall
+Skoldie/Scoldie
+Muggzy/Muggz
+Mumbles
+Weasel
+Kasper/Casper
+Low Down
+Krazy Dre/Crazy Dre (when real name has Dre in it)
+Shorty
+Droopy
+Pinky
+Skatterbrains/Scatterbrains
+Blood Brazy/B-Brazy
+Insane
+Iceman
+Cyco/Psyko
+Boxer
+Boo Boo
+Blokk Head/Blocc Head
+Box Head
+Creepy/Creep
+Mud
+Killa Mac/K-Mac
+Ripper
+Bear Klaw/Bear Claw
+Fishbone/F-Bone
+Draws
+Wack
+Face
+Pimp
+Popeye
+Fat Rat
+Slugger
+Quarter Pound
+Loose Kannon/Loose Cannon
+Hoodsta
+Slip
+Chilly
+Bird
+Sandman
+HukkaBukk/HuccaBucc
+Gunsmoke/GS
+Killshot/KS
+Hoodlum
+Hood Boy/HB
+Bam
+Kuete/Cuete
+Siete/Seven
+Stupid
+Bunky
+Koop/Coop
+Fatts
+Chucky
+June Bug
+Snake
+NoGood
+Santa Klaus/Santa Claus
+Wicked
+Spoon
+Spook
+Fatman
+Gangsta Skinny/G-Skinny
+Kool Boy/Cool Boy
+Evil
+Tippy
+Snipe
+B Down
+Studderbox
+Knockout/KO
+Knoccout/KO
+Gangsta/G/Gee
+Shysty
+Sike
+Drak/Drakula
+Gangsta Man/G-Man
+X-Ray
+Termite
+Green Eyes
+Paybakk/Paybacc
+Redd
+Blue
+Shark
+Stoney
+Moon Rock/Moon Roc
+Solo
+E-Bone (when real name begins with E)
+Devious
+Too Shay
+Snap
+Brazo/Crazo
+Tako/Taco
+Chunkkems/Chunccems
+Flako/Flaco
+Mitch
+PeeWee
+Nutt
+Hitman
+Ant
+Beerkan/Beercan
+Goofy
+Strange
+Stranger
+Woody
+Champ
+Speedy
+Dolla Bill
+Bogart
+Klown/Clown
+Hub
+Skooter/Scooter
+Kaddy/Caddy
+Barefoot
+Vicious
+Worm
+Kokonut/Coconut
+Johnboy
+ZigZag
+Kutthroat/Cutthroat
+Slice
+Kris/Cris
+8 Ounce
+Troll
+Twilight
+Murder/M
+Bowleg
+Suge
+Shugg
+B-Dog
+Pookie
+Bink
+Red Bull
+Pumpkin
+Skoob/Scoob
+Skoobie/Scoobie
+Kountry/Country
+Smiley
+Kick
+Smoke
+Devil
+Hulk
+Skarface/Scarface
+Bugsy
+Easy
+Gangsta Spank/G-Spank
+Spank
+B-Ragg/C-Ragg
+Bubble Up
+Faceshot/FS
+Bandit
+Chukk/Chucc
+Kool-Aid/Cool-Aid
+Demon
+Suspect
+Kartoon/Cartoon
+Fruity
+Bullet
+Diehard
+Hamm
+Mighty
+White Boy
+Shooter
+Tricky
+Slikk/Slicc/Slick
+Hawk
+Porky
+Neckbone
+Dead Arm
+Monk
+Lumpy
+Bossman
+Squeak
+Krumb/Crumb
+Kranky/Cranky
+Tiger
+Firebugg
+Badass
+Bush
+Baldy
+Flake
+Ace
+Tik Tok/Tic Toc
+Red Devil/Blue Devil
+Timebomb
+Dee Dee
+Ol Skool/Ol School
+Bruh/Bro/Brotha
+Krime/Crime
+Gangsta Krime/G-Krime/GK
+Pistol
+Lightbulb
+Pepper
+Bulldog
+Mack/Macc
+Perv
+Roughhouse
+Hard Body/HB
+Quake
+Nose
+Forehead
+Silk
+Shady
+Ghost
+Flee
+Flea
+Headache
+Rich
+Jolly
+Krook/Crook
+Punch
+Dizzy
+Choo Choo
+Rainbow
+Sticks/Stikks/Sticcs
+Fase
+Junkman
+Hyetop/Hitop
+Flipside
+Flip
+Mad Eyes
+Red Eyes
+Nutty
+Nutty Boy
+Munchie
+Madd
+Spider
+Rampage
+Unk/Unc
+Sneak
+Donut
+Silent
+Chinaman
+Get Off/GO
+Wet Em Up
+Burger
+Buck
+Jughead
+Limp
+Skipp/Scipp
+Fabulous/Fab Lok/Fab Loc
+Smash On Em
+Smash
+Chunkkem Up/Chunccem Up
+Spike
+Slice
+Click Clack/Clikk Klakk/Clicc Clacc
+Danger
+Dangerous
+Dirtbag/DB
+Sidewinder
+Chillie
+Kaos/Chaos
+Disko/Disco
+Looseskrew/Loosescrew
+Space Ghost
+45/Foe Five
+Pirate
+Buttons
+Lunatik/Lunatic
+Too Brazy
+Boosane
+Acktive/Active
+Dubb
+Headshot/HS
+Beat Em Up
+Booby
+Shank
+Hard Rock/Hard Rocc
+Chub
+Chubby
+High Tower
+Kodak
+Tweedy
+Tweeder
+Killa Ckrab/KC
+Pappy
+Snappy
+Sleepy
+Beezy
+Kokaine/Cocaine
+Krakk/Cracc
+B-Ball/C-Ball
+Nuttso
+Krash/Crash
+Gangsta Life/G-Life
+Chip
+Lotto
+Hotdog
+Monkey Man/2M
+Gator
+Looney B/LB
+Cash Out
+Turtle
+Mike Myers
+Swig
+Swig-A-Low
+Train
+Freeze
+Hike
+Mase/Mace
+Bounty
+Warrior
+Smokey
+Rawdogg
+Japanese/Jap
+Spaceghost
+Nine
+Lunchmeat
+Drop
+Line Em Up
+Do Low
+Chalk Em Out
+Strong Arm
+Evil Bat
+Bat
+Babyface
+Q-Ball
+Under Dogg
+Yank
+Big Shot
+BeReal
+Tookie
+Laydown
+Slowmow
+Trippy
+Greedy`,
+
+            'Nuda': 
+`Czasami po wejściu na serwer można poczuć że właściwie nie wiadomo czym się zająć a standardowe aktywności skryptowe nie dostarczają już większej satysfakcji. Takie podejście jest dość powszechne wśród graczy. Roleplay to jednak inny typ rozgrywki niż typowe gry które ciągle dostarczają emocji i właśnie w tym tkwi problem dla wielu osób, łatwo wpaść w nudę. Na szczęście istnieje prosty sposób by to zmienić i wciągnąć się w grę.
+
+Pierwszym krokiem jest tworzenie własnych unikalnych wątków fabularnych które koncentrują się wyłącznie na Twojej postaci i jej najbliższym otoczeniu. Nie warto ograniczać się tylko do aktywności w obrębie znajomych, samodzielne wątki dają postaci głębię i indywidualny charakter.
+
+Na przykład jeśli odgrywasz bardziej rozbudowaną postać możesz chodzić na siłownię aby zadbać o kondycję. Wątki niezwiązane z organizacją nadają postaci unikalną aurę sprawiając że wydaje się jakby faktycznie żyła poza czasem spędzonym na serwerze. Podczas gry nie trzeba ciągle opowiadać wszystkim co dzieje się w tej chwili, można wpleść retrospekcje lub rozmowy o wydarzeniach przeszłych/o rodzinie. Na przykład postać może wspomnieć o sytuacji w szkole, konfliktach lub innych doświadczeniach które miały wpływ na jej życie. To dodaje wrażenia autentyczności i sprawia że postać wydaje się żywa także poza chwilami aktywności.
+
+Ważne jest również aby postać miała background czyli historię i cechy które ją definiują. To właśnie na podstawie tej historii można budować watki i uczynić rozgrywkę bardziej realistyczną. Przy tworzeniu backgroundu warto szczegółowo przemyśleć co postać przeżyła jakie ma cechy i cele oraz jak wygląda jej otoczenie. Każdy gracz w dużej grupie powinien mieć świadomość że postacie mogą być do siebie podobne dlatego dobrze jest zadbać o to aby Twoja postać wyróżniała się w unikalny sposób.`,
+
+            'Grzeczni Ludzie': 
+`• W FiveM'ie typowe jest sprawdzanie każdej osoby która przechodzi przez daną ulicę, dany projekt. 
+W rzeczywistości dzielnice kontrolowane przez sety funkcjonują jak normalne miejsca publiczne gdzie mogą pojawiać się różni ludzie. Naciskanie na przypadkowych cywilów lub wchodzenie w interakcje z każdym kto akurat się pojawi jest błędem i nie powinno mieć miejsca. Na ulicach Los Angeles można spotkać młodzież pomagającą sąsiadom, osoby pracujące w domach opieki, wolontariuszy czy zwykłych mieszkańców angażujących się w życie społeczności. Chociaż nie zdarza się to bardzo często warto mieć to na uwadze. 
+
+Podobnie w kontaktach z klientami po dragi powinno być to realistyczne. Kiedy zbliża się do was osoba lub do kogoś z osobna ktoś kto jest 'umówiony' nie ignorujcie jej i nie wyzywajcie od zjebów… W świecie gangów odrzucenie klienta oznacza utratę potencjalnego zysku i jest nielogiczne`,
+
+            'School': 
+`Jeśli jesteś nastolatkiem i odgrywasz że chodzisz do szkoły (możesz zdropoutować w highschoolu) odgrywaj że np. sprzedajesz zioło w szkole lub opowiadaj o tym co sie działo dzisiaj w szkole swoim murzynom z hoodu, jest to dobra okazja aby zainicjować jakąś konwersację, mów różne bzdury na temat nauczyciela albo że dzisiaj miałeś fade, pytaj się innych o GPA bo przecież nie musisz rozmawiać na temat tego co cię otacza. W tym temacie ogranicza cię tylko twoja własna wyobraźnia`,
+
+            'Cops': 
+`• Wielu graczy popełnia ten sam błąd: traktuje PD jakby była częścią jakiejś zabawy, jakby to byli zwykli NPC albo miękkie służby z polskiego podwórka.
+Wyzywają, prowokują i potem są wkurwieni że kończy się to strzałem w ich stronę. Prawda jest taka: w Stanach, a szczególnie w miejscach takich jak South Central , Watts , kontakt z PD to ciężki temat;
+
+• Tu nie ma miejsca na pajacowanie
+Officer nie jest Twoim znajomym, to nie jest straż miejska która Ci da reprymendę i puści wolno. To oddziały taktyczne, wyszkoleni gliniarze, którzy są gotowi do użycia siły i mają za sobą cały system. Mają kamizelki kuloodporne, karabiny o lepszej penetracji niż twoje wieśniackie TECi z lat 90' z czarnego rynku zacinające się co 4 strzał, helikoptery z kamerami termowizyjnymi i procedury których będą się trzymać do końca
+
+• Nie kozacz!!
+Non ma nic mniej realistycznego niż 19-letni banger który rzuca się na radiowóz. Zamiast tego myśl. W prawdziwym życiu nawet OG z 9 Compton nie rzuca się na cops bez powodu
+
+• Nie wywołuj bezsensownych konfrontacji...
+jeśli chcesz wciągnąć PD wjakąś akcję IC zrób to z głowa. Plan, back-up, szybki exit, nie rób tego bo nudno. Przemyślane akcje są bardziej klimatyczne i realistyczne niż palenie gumiaka Schafterem pod Binco żeby ściągnąć patrol
+
+• Szanuj napięcie sytuacji
+Jeżeli jesteś na ulicy i nagle pojawia się patrol, niezaczynaj krzyczeć, biegać w kółko jak idiota z wl offa. Zamiast tego odgrywaj to jakbyś był naprawdę w stresie i wiedział że każdy ruch może kosztować cię życie!
+
+• Po Pojawieniu się wsparcia odpuść
+Kiedy PD wezwie back-up Twoja postać wie że teraz nie ma już szans. "Przeciwnik" ma przewagę liczebną, technologiczną i prawną. Zostań przy homies i nie ściągaj niepotrzebnie gówna na hood…
+
+• Milcz jak trzeba milczeć!
+Przesłuchania, zatrzymania, kontrole… nie wszystko musi kończyć się kłótnią która przerodzi się na ooc czacik. IRL gangbanger będąc już na stacji często milczy, nie podaje danych, odmawia składania wyjaśnień bo wie że i tak pójdzie siedzieć więc warto pograć twardziela
+
+Nie śmiej się z PD, nie lekceważ ich, kiedy gliny wchodzą na hood to moment w którym każdy gra na serio. Odgrywaj napięcie, złość, niepokój. Не rób z tego żartu bo jeśli ich zlekceważysz będzie to wyglądało po prostu jak słabe RP`,
+
+            'HoodGirls':
+`• JAK PRZEKONUJĄCO ZAGRAĆ KOBIETĘ Z HOOD-u?
+
+•  Granie kobiety jest dość bardziej rozbudowane z racji na ogólne RP.
+Nie dość że jako kobieta macie więcej interakcji z racji tego że większość facetów na SC oraz po za nim będzie do was zagadywać, to też macie więcej opcji grania różnorakich charakterem kompletnie różniących się od siebie kobiet. W końcu żadna kobieta nie jest taka sama każda ma inne fochy, inne rzeczy ją interesują itd.
+
+•  Pomyśl o takich rzeczach jak to:
+Ile wysiłku twoja postać wkłada w swój wygląd każdego dnia? Czy stosuje makijaż? Czy ma czystą skórę? Czy jej włosy są proste czy kręcone? Jak często robi sobie paznokcie? Czy nosi designerskie ciuchy czy podróbki? Czy jej buty są nowe czy brudne? Czy dorastała rozpieszczona przez jej rodziców, czy dorastała z niczym? 
+
+•  Pomyśl o pragnieniach i pożądaniach:
+Czy myśli że staje się gruba? Czy potrzebuje pieniędzy aby zapłacić za paliwo? Czy pomaga swojej rodzine w płaceniu rachunków? Czy chodzi do szkoły? Czy chce mieć kiedyś dzieci? Jeśli tak, to co twoja postać zamierza zrobić, aby osiągnąć te cele? Czy zamierza być z bangerem? Czy może nie chce brać udziału w ganglandzie? A może chce być kobietą trophiego?
+
+•  Rozwijaj swoje cechy. 
+Czy Twoja postać zawsze żuje gumę? Czy nosi włosy w określony sposób? Czy źle wymawia pewne słowo?
+
+•  Odgrywaj swoje ruchy. 
+Przerzuć włosy, zwiąż je, gdy widzisz nadchodzącego rywala, połóż rękę na talii, złóż ramiona, gdy jesteś wściekła, spoliczkuj zamiast uderzenia, klaskaj w dłonie, gdy jesteś zła.
+
+•  Język. 
+Kobiety mówią inaczej niż mężczyźni, znajdź kilka typowo "kobiecych" zwrotów i używaj ich. Narzekaj na to, że wszyscy mężczyźni to psy, nazywaj swoje koleżanki sukami, albo dziwkami. Wszystko, co tworzy bardziej realistyczną kobiecą wypowiedź. Naucz się poprawnej wymowy, to znacznie poprawi jak naturalnie brzmi twoja postać. Możesz to sprawdzić na youtube i innych forach internetowych itp.
+
+•  Pamiętaj jakie są realia na South Central aby dopasować swoją postać do tych założeń. 
+Twoja postać może szukać wielu rzeczy oraz interakcji z innymi. Może być Bangerką, Nerdem który kumpluje się z ludźmi z kliki, Może szuka miłości?, Może szuka zabawy z innymi i szybkiego seksu?, Może będzie to wstanie zrobić dla kasa?, Może będzie agresywna?, Może spokojna?, Może wrażliwa i strachliwa?, A może jest ćpunką? Opcji jest wiele lecz pamiętaj aby twój roleplay nie wyszedł za South Central przykład: (kobieta związana z South Central realnie nie pozna gościa z Rockford Hills i nie zostaną cudowną parą bo typ ma kase i wyciągnie ją z ulicy. To jest nierealne więc dla RP kobieta powinna utrzymywać maksymalnie relacje koleżeńskie odsuwając się od innych osób nie powiązanych z jej gangiem. Lecz nikt nie zabroni komuś totalnej relacji z innymi lecz po prostu grajcie to z rozwagą po to chcesz grać w klice aby dla niej być.)
+
+•  Używki 
+Pomyśl czy twoja kobieta będzie Ćpunką? może Narkomanką? może Alkoholiczką? może nałogowym Palaczem? 
+
+Może twoja postać potrzebuje zapalić? napić się? zajebać kolejną działkę aby być na high? Może jest szczęśliwa kiedy dopiero weźmie działkę? A może walczy aby nie brać znowu tego staffu? Zastanów się jaką osobą staje się twoja postać gdy jest pod wpływem używek. Każda używka działa na każdego inaczej może będziesz radosna, szczęśliwa, smutna, depresyjna, ospała, agresywna, nerwowa?
+
+Warto sobie też zadać pytanie jak zaczęło się twoje uzależnienie oraz jak bardzo jesteś uzależniona? Może to być chęć zaimponowania komuś bądź próba walki z bólem w środku ciebie bądź walki z problemami życiowymi. Zadaj sobie pytanie jak bardzo uzależniła się twoja postać? Jak długo wytrzyma bez narkotyku oraz jak się zachowa bez niego na głodzie? może panikować może być agresywna może być nerwowa albo smutna. Pamiętaj że nałogi "luźne" typu palenie/alkoholizm/weed mimo że nie mają identyfikacji jako "Hard Drugs" też potrafią wpływać na postać oraz jej życie. Głólnie Alkoholizm. I Zadaj sobie pytanie jak daleko posunie się twoja postać aby zaspokoić głód.
+
+•  Odgrywanie Postaci 
+
+•  Szkoła
+Szkoła jak dla faceta tak dla kobiety to bezpieczna strefa bo nie można tam strzelać, a jeśli byś to zrobiła, byłoby to bardzo głupie. To praktycznie prośba o pójście do więzienia. Mimo to, musisz być ciągle czujna, bo zawsze będziesz chodzić do szkoły razem ze swoimi wrogami i napotykać ich tak jak napotykają ich faceci. Nawet jeśli sama nie jesteś powiązana z żadnym gangiem, jeśli jesteś na zdjęciach online ze swoimi znajomymi, którzy są powiązani, inni nie będą mogli was odróżnić. Sam fakt, że pochodzisz z konkretnego terenu, może wystarczyć, żeby ktoś chciał cię „pressować” i pobić. W szkole usłyszysz dużo obelg — podczas zajęć, przerw, meczów. Powiedzą ci, żebyś wpadła na nich na szkolnym boisku po lekcjach. Musisz być więc cały czas czujna. Pomyśl czy twoja postać będzie miała dobre czy złe oceny. Pomyśl jakim typem ucznia będzie czy się spóźni na zajęcia czy będzie pilnym uczniem. Z racji grania blisko 83' Hoover Criminals Gang twoja postać nie może przestać się edukować bo "nie chce jej się" gang naciska na edukację aby nie być "broke" wyjątkiem jest wyrzucenie ze szkoły bądź ogólna umiejętność myślenia.
+
+•  Relacje Rodzinne 
+Życie kobiety tak jak życie nerda czy membera mimo różnic wciąż polega na tym samym z pewnymi różnicami. Kobiety w domu są wychowywane inaczej niż synowie. Jeżeli kobieta ma złe relacje z ojcem, często brakuje jej szacunku do samej siebie i nie wie jak zachowywać się w obecności mężczyzn (daddy issues), przyciągnie do siebie toksycznych chłopaków i nie potrafi znaleźć lepszych znajomych. Jeżeli odwrotnie ma dobre relacje z ojcem będzie wiedziała jak powinien ją traktować mężczyzna. Zależy też to od tego czy w naszej historii ojciec jest żywy/martwy/był gang memberem/potworem w domu/bił/ćpał/znęcał się na tobą. Ważna w twoim wychowaniu będzie też rola matki. Jeżeli matka była prostytutką albo żyła z związku na związek nie potrafiąc utrzymać faceta na dłuższą metę albo tak jak ojciec mogła ćpać, znęcać się nad tobą, albo nie żyła doprowadzi to do myśli córki że tak powinno być. Agresja w rodzinie doprowadzi do agresywnych zachowań twojej postaci, wycofywanie się gdy ktoś podejdzie bliżej wyciągając rękę w jej stronę albo na nią krzyczy bądź odwrotnie może sprawić że twoja postać zamknie się w sobie. Ofiary przemocy mają różne mechanizmy obronne i zachowania. Jeżeli twoja postać miała starsze rodzeństwo to prawdopodobnie nauczyli ją jak o siebie dbać a nawet jeśli rodzice byli źli może role rodziców przejęło rodzeństwo, ciotka, babcia, brat, wujek. Jeżeli miała braci duże są szanse że jak byli bangerami to uczyli ją bić oraz walczyć aby przygotować ją do obrony na ulicy co jest ważne iż kobiety na hoodzie nie ciągną się za włosy i podgryzają pazurkami tylko walczą na pięści jak faceci i unikają ciosów tak jak faceci. Zwróć uwagę że rodzice potrafią też wychowywać cię surowo co sprawi że będziesz chciała uciekać z domu jako buntunicka i unikać jak najwięcej interakcji z nimi czyli po prostu powrotu do domu. Czasem też dochodzi do wyrzucenia z domu a twoja postać może być zainteresowana chłopakami z osiedla którzy żyją z dnia na dzień. Pamiętaj że jeżeli rodzinne korzenie są zakorzenione z gangiem doprowadzi to do tego że twoja postać od razu jest skazana na życie w gangu.
+
+•  Los na ulicy 
+Bycie w gangu nie daje nam gwarancji że będziemy w nim do końca życia. grozi nam DP albo utrata respectu a w przypadku kobiety jest ci go łatwiej stracić niż facetowi. Iż facet może obracać laski co jest dość okej a ty za "dziwkarskie zachowanie" możesz mieć problemy. wystarczy jedna zła osoba z którą pójdziesz do łóżka, albo jakieś stories z nielubianymi osobami z opozycji albo wrogów kliki o których czegoś nie wiesz, albo bycie po prostu problematyczną kobietą która odmawia bójek, dużo szczeka a nic nie robi po za storkami na socialach (net-bangin) ze względu na to że kobiety naturalnie lubią pokazywać się w socialach w przeciwieństwie do facetów. 
+
+Kobiety i mężczyźni myślą, czują i reagują inaczej. Jako dziewczyna powinnaś być ostrożna, zwłaszcza sama, późno w nocy. Jeśli jesteś otoczona przez grupę nieznajomych chłopaków i jesteś tam sama albo jest ich więcej niż twoich koleżanek, to realistycznie — jest to przerażające. RapeSex w RP jest zabrioniony lecz podejdź do tego realistycznie, bo w takiej sytuacji prawdopodobnie możesz stać się ofiarą. Niebezpieczeństwo nie dotyczy tylko przemocy fizycznej, ale też seksualnej. Więc graj ostrożność realistycznie nigdy nie lataj sama w nocy, trzymaj się blisko jakiegoś czarnucha jak darzysz go zaufaniem albo informuj klike co się dzieje kiedy gdzieś jesteś. Dziewczyna śpiąca z kimś z innego gangu to kompletnie co innego niż facet śpiący z dziewczyną z innego gangu. No chyba że jesteś dziewczyną, która zawsze jest na topie i nigdy nie pozwala nikomu z innego gangu się do siebie dobrać — to inna sprawa, bo on może cię zaspokajać oralnie; ale jeśli to ty jesteś „łamana na pół”, to jest to pokaz siły, którą przeciwnicy mają nad twoim gangu, i okazja do ich ośmieszenia. Warto mieć na uwadze że spanie z opozycją grozi po prostu po za Put-Offem (DP) może skończyć się dla kobiety śmiercią. Mężczyźni chwalą się tym, że „zaliczają dziewczyny”, dziewczyny są za to wyzywane od „dziwek”. Tak to jest w realnym świecie, zwłaszcza na project'ach. Jeśli chodzi o walki z facetami, dziewczyny często rzucają się na chłopaków, jednak nigdy nie podchodź sama do gangu z innego terenu, prowokuj ich, a potem próbuj walczyć — dostaniesz srogie lanie. Nie jesteś Mike'iem Tyson'em, a faceci nie wahają się uderzyć dziewczyn i powinnaś o tym wiedzieć. Jeśli jednak pojawisz się z grupą swoich koleżanek, które są gotowe bronić setu.
+
+•  Związek na Hoodzie
+Twoja postać może być typem dziewczyny, która jest na osiedlu tylko przez swojego chłopaka. Może nawet być taką, którą do gangu wciągnęli właśnie przez chłopaka — chce jeździć za swojego faceta, więc poświęca się również dla swojejego setu. Wyjątkiem jest dziewczyna która chce być dla Trophiego. ~ Kim jest trophy dowiesz się w zakładce "MEMBER". Myśląc o jej związku, zastanów się, czy twoja postać jest lojalna czy nielojalna. Czy jest przywiązana, czy raczej zdystansowana? Czy jej związek jest toksyczny, czy zdrowy? Czy pozwala facetowi sobie rządzić? Czy zachowuje się jak gospodyni domowa i robi za niego wszystko? A może wytyka mu takie zachowania i potrafi się postawić? Czy jest gotowa dla niego kłamać? Czy uważa, że to tylko chwilowa nastoletnia zabawa, czy myśli, że będą razem na zawsze? Czy jest wierna do końca czy raczej odsunie się i pozwoli mu samemu sobie radzić? Oczywiście są dziewczyny, których świat kręci się wokół chłopaka, ale to nie zawsze prawda. Niektóre dziewczyny stawiają inne rzeczy ponad swojego faceta.
+
+•  Przyjaźnie na Hoodzie
+Jedna bardzo ważna rzecz, o której musisz pamiętać, to fakt, że ludzie, z których twoja postać się obraca, będą na nią wpływać i będą też o niej świadczyć. Jeśli jej przyjaciółki są luzackie, to większość ludzi założy, że ona też taka jest. Jeśli jej koleżanki są bez bcharakteru, ciągle gadają bzdury i nie wspierają się nawzajem, ludzie pomyślą, że ona też taka jest. Jeśli usłyszą, że ktoś gada bzdury o nich, czy będą tylko słuchać i milczeć, czy raczej wyjdą z tego i każą mu zamknąć się? Czy twoja postać to typ, który gada o swoich znajomych innym, czy raczej chodzi do nich i rozmawia o tym, co ją martwi, żeby to rozwiązać? Jeśli jej przyjaciele wpadną na jakąś grupę i zaczną się bić, czy ona ich wesprze, żeby nie dostali pobicia? Czy jest gotowa na kłopoty, wziąć na siebie odpowiedzialność za kolegę, czy może ich wyda? Czy jej przyjaciele naprawdę są dla niej ważni, czy są tylko dlatego, że przynoszą jej korzyści. Jeśli pokłóci się z przyjaciółką, która naprawdę dla niej wiele znaczyła, będzie to dla niej bardzo bolesne. Czasem rozstanie z przyjacielką boli bardziej niż z chłopakiem. Może też powie swoim ziomkom, żeby dali znać, jeśli chcą, żeby jakaś dziewczyna została napadnięta. Albo zadzwoni do swojego ziomka, żeby przyszedł walczyć za jej faceta. To wiele małych rzeczy, o których możesz pomyśleć, a które dodadzą twojej postaci dużo głębi.
+
+•  Przykłady Możliwości Grania Kobiety (Kilka pomysłów na grę kobiety jeżeli nie masz pomysłu na siebie)
+
+•  Grzeczna Dziewczynka (Goody Two-Shoes)
+Szkoła jest dla niej najważniejsza. Zawsze skupiała się na nauce i dobrych ocenach. Chce wyrwać się z osiedla i osiągnąć coś większego i lepszego. Nie ma czasu na chłopaków z ulicy, którzy tylko próbują ją rozpraszać i odciągać od sukcesu. Marzy o karierze prawniczki i unika włóczenia się daleko od domu ze strachu przed aresztowaniem.Przejmuje się każdą możliwością wpadki, bo mogłoby to zniszczyć jej nieskazitelne akta, a tym samym szanse na dobre życie. Są też takie grzeczne dziewczynki, które są w jakiś sposób zamieszane w życie ulicy, ale nieustannie boją się konsekwencji, jakie to za sobą niesie.Pomyśl o jej rodzicach — czy są surowi? Może właśnie dlatego jest taka poukładana. A może przez tę presję narasta w niej chęć buntu, choć i tak nie może pozbyć się lęku przed kłopotami?
+ 
+• Wredna Dziewczyna (The Mean Girl)
+Zawsze znana była z tego, że ma "postawę". Jest głośna, bezpośrednia i potrafi wybuchnąć bez powodu. Często ma za sobą historię przemocy i złego zachowania  potrafi wybuchnąć szybciej niż niejeden chłopak. Jej matka nie chce jej w domu, a ciotka nie chce jej przyjąć. Co się stało? Dlaczego jest taka wściekła?Nikt nie rodzi się zły  chyba że wynika to z choroby psychicznej  złość i gniew rozwijają się w człowieku przez doświadczenia i sposób wychowania. Czy ta wredna dziewczyna naprawdę dba tylko o siebie? A może gdzieś głęboko ma miękkie serce? Czy staje się milsza, gdy lepiej ją poznasz, czy może okazuje się jeszcze gorsza?W wielu przypadkach osoby, które krzywdzą innych, same wcześniej były ofiarami. Może negatywność i toksyczność to jedyne, co kiedykolwiek znała.
+
+•  Dzieciata (Baby Mama)
+Zaszła w ciążę — czy to z kimś ważnym na osiedlu, z chłopakiem z innej dzielnicy, z kimś ze swojego podwórka, ze stałym partnerem czy z przelotnym romansem — wszystko zależy od tego, jak poprowadziłaś fabułę swojej postaci. Czy to nastoletnia ciąża? Jak zareagował ojciec dziecka? Czy w ogóle jest obecny w jej życiu? Co na to jej rodzina? A przede wszystkim — co ona sama o tym myśli? Czy naprawdę zależy jej na dziecku?
+
+A może trzyma to dziecko z jakiegoś ukrytego powodu — chce wydostać się z osiedla, mieć więcej ochrony, sprawić, by ludzie o nią walczyli? A może chce „uwiązać” faceta, żeby przy niej został? Czy ciąża sprawi, że się uspokoi, zejdzie z ulicy i zacznie bardziej uważać, żeby nie zaszkodzić dziecku? A może hormony tylko spotęgują jej agresję?
+Jeśli naprawdę zależy jej na dziecku i chce, by miało lepsze życie, prawdopodobnie zacznie dojrzewać i nie będzie chciała wracać do dawnych nawyków. Teraz musi myśleć nie tylko o sobie, ale i o nowym życiu.
+
+Kiedy dziecko przyjdzie na świat — czy będzie próbować wyrwać się z osiedla, by zapewnić mu lepszą przyszłość? Czy może wręcz przeciwnie — zostanie i będzie próbować zbudować lepsze życie właśnie tam, zarabiając więcej i wchodząc głębiej w ryzykowne akcje? Jaki ma plan?
+
+ODGRYWANIE ROLI „BABY MAMY” MOŻE PRZEBIEGAĆ NA WIELE RÓŻNYCH SPOSOBÓW.
+
+Wszystko zależy od otoczenia postaci, jej charakteru i tego, jak została wychowana.
+
+•  Łasa na Atencję / „Pick Me”
+Zawsze musisz być w centrum uwagi — jeśli nie jesteś, to zaczyna się problem. Gdy nie dostajesz takiej atencji, jakiej pragniesz, stajesz się głośna, rzucasz się w oczy i zrobisz wszystko, by ją zdobyć. Flirtujesz z każdym chłopakiem, a inne dziewczyny dissujesz, by samej wypaść lepiej. Lubisz rozmawiać z wieloma chłopakami naraz i nie kryjesz się z tym — wręcz przeciwnie, chwalisz się tym przy każdej okazji.Gdy inna dziewczyna mówi o chłopaku, który jej się podoba, rzucasz tekstem w stylu: „On pisał do mnie wczoraj”, tylko po to, by ją przyćmić i pokazać, że jesteś „lepsza”. Dużo uwagi poświęcasz swojemu wyglądowi i temu, co myślą o tobie inni. Potrafisz mówić, że jesteś brzydka, tylko po to, by usłyszeć, że jesteś śliczna.Noszenie dużej ilości biżuterii, chwalenie się pieniędzmi, kręcenie tyłkiem na Instagrama — to twoja codzienność. Porównujesz dłonie z chłopakami, a gdy ktoś się tobą zajmuje — uwielbialsz to. Zrobisz wszystko, by ludzie o tobie mówili i żeby nie zostać zapomnianą.
+
+•  Laska na Jedną Noc (Hoe)
+Jest znana z tego, że ma wysoki „body count” — spała z wieloma facetami i być może „krążyła” już między kumplami. A może wręcz przeciwnie — prowadzi podwójne życie i nikt nie wie, co naprawdę robi. Zastanów się, dlaczego sypia z mężczyznami — czy robi to, bo sprawia jej to przyjemność, czy może próbuje coś dzięki temu zyskć, np. pieniądze albo narkotyki.Czy sypia z zajętymi facetami, czy ma jakieś zasady? A może wcale nie ma złych zamiarów — po prostu łatwo się angażuje i oddaje szybko w nadziei, że chłopak się zakocha i zostanie z nią na dłużej?Zawsze, zawsze, zawsze istnieje jakiś powód, dla którego dziewczyna decyduje się na takie życie. To nie zawsze pusta, słodka laleczka — za taką postacią kryje się coś więcej.
+
+•  Jedna z Chłopaków (One of the Boys)
+Ta dziewczyna naprawdę jest traktowana jak „jeden z chłopaków”. I trzeba zaznaczyć — jest ogromna różnica między dziewczyną, która faktycznie uchodzi za część męskiej ekipy, a taką, która tylko się wokół nich kręci. Zazwyczaj dorastała wśród mężczyzn — miała wielu braci, kuzynów albo po prostu wychowała się w męskim towarzystwie. Dziewczyna, którą faceci naprawdę uważają za „jedną z nich”, to taka, która nie angażuje się w dziecinne dramy czy konflikty z innymi dziewczynami. To nie znaczy, że nie wspiera swoich koleżanek — kiedy trzeba, stanie za nimi murem. Rozwiązuje problemy jak chłopak — walka, a potem temat zamknięty. Dziewczyny, które ciągle hejtują inne dziewczyny i mówią „ja nie jestem jak inne”, to nie „jedna z chłopaków” — to klasyczne „pick me”.Nie musi być chłopczycą, nie musi wyglądać męsko ani być twardzielką. Może wyglądać bardzo kobieco, ale po prostu lepiej dogaduje się z facetami — i nie oznacza to, że musi nienawidzić innych dziewczyn.I co ważne — taka dziewczyna nie jest postrzegana jako „laska do zaliczenia”. Jeśli byłaby rozwiązła, chłopaki nie traktowaliby jej jak swojego — próbowaliby ją po prostu przelecieć. Szacunek i lojalność są kluczowe.
+
+•  Dziewczyna-Trofeum (Trophy Girl)
+Ta dziewczyna jest całkowicie oddana swojej ekipie — sypia tylko z ludźmi z gangu, a jej chłopak to niemal na pewno ktoś z tego samego setu. Nie flirtuje z facetami spoza swojego osiedla. Jest bardzo lojalna — zarówno wobec swojego związku, jak i gangu. Ma wielki szacunek i jest znana właśnie z tej lojalności. Nie tylko o niej mówi, ale pokazuje ją w swoich czynach, w relacjach z ludźmi i tym, co robi dla swojej ekipy. Nigdy nie próbuje usprawiedliwiać ani bronić innych gangów — gdy tylko ktoś stanowi zagrożenie dla jej setu, szybko reaguje i działa. Ta dziewczyna nie jest „laską na jedną noc” i nie robi niczego, co mogłoby wzbudzać takie podejrzenia. Może czuć się dobrze ze sobą i dobrze się bawić, ale nigdy nie robi nic specjalnie, by zdobyć męską uwagę.`,
+
+            'GRANIE NERDA':
+`• Granie nerda czyt. (cywila nienależącego do struktur gangu od samego początku) to świetny punkt wyjścia do budowania długofalowego i realistycznego rozwoju postaci (Rozwijanie postaci.)
+
+• Kim jest Nerd/Cywil na hoodzie?
+To osoba, która dorasta na tym samym osiedlu (83rd' Project's), chodzi do tej samej szkoły, mija tych samych ludzi, ale nie jest wdrożona w codzienne przestępcze życie gangu. Może być kuzynem kogoś z setu, sąsiadem, albo po prostu młodym chłopakiem, który próbuje trzymać się z dala kłopotów, skupiając się na nauce, sporcie lub innych zajęciach.
+
+• Jak to odgrywać?
+•  Nie biegaj od razu z bronią i nie rzucaj osiedlowym slangiem w każdych odgrywkach, jeśli Twoja postać nie ma o tym pojęcia.
+Miej na uwadze że na hoodzie uczysz się slangu oraz żyjesz z tym codziennie lecz nie jesteś na tyle na serio aby skupić swój styl życia na tym do momentu podjęcia decyzji zostania Beforem później Bangerem.
+
+•  Odczuwaj naturalny strach przed przemocą, strzelaninami i policją.
+Jesteś gościem który nie ma za sobą ludzi po za rodziną albo kilkoma znajomymi którzy mogą czasem nawet bać się odwiedzić cię na hoodzie, albo jesteś stary i po prostu martwisz się o swoje życie i finanse. Jest to bardzo ważne w początkowej fazie kreacji postaci.
+
+•  Buduj relacje powoli!
+Członkowie gangu mogą traktować cię obojętnie, czasem wykorzystywać do drobnych przysług (np. przyniesienie czegoś, przechowanie), co naturalnie wciąga cię w ten świat krok po kroku.
+
+•  Twoja postać ma swoje cele i pasje niezwiązane z gangiem, co nadaje jej autentyczności.
+Nerd to po prostu Cywil. Może podjąć się pracy próbować wyrwać się z bloku, znaleźć miłość albo być zwykłym zaprzyjaźnionym kumplem na hoodzie który nie ma za sobą kliki mimo że klika go lubi i w pewien sposób szanuje a nawet zaprasza na nocne gry w kosza a może troop'a.
+
+•  Jakie są realia życia na South Central?
+
+South Central jest najbiedniejszą częścią miasta. Zmaga się z poważnym kryzysem bezdomności, w którym wiele osób bezdomnych mieszka na ulicach i w obozowiskach. Problem pogłębiają takie czynniki, jak brak tanich mieszkań, wysokie koszty utrzymania oraz problemy, takie jak choroby psychiczne i zaburzenia związane z używaniem substancji psychoaktywnych które w ogromnym stopniu dotykają społeczności czarnoskóre oraz latynoskie. Warto dodać też rasizm i dyskryminacja szczególnie wobec czarnoskórych mieszkańców Los Santos a głównie (South Central) są głównymi problemami bezdomności oraz budzi negatywne nastroje w społeczności lokalnej.
+
+W South Central [2025r.] największą grupą etniczną nie są czarnoskórzy jak każdemu się wydaje a właśnie latynoskie grupy. aktualnie % wygląda to tak:
+
+•  Latynosi 33,52%
+•  Afroamerykanie 25,27%
+•  Osoby białe 14,04%
+•  Reszta % to pomniejsze grupy typu azjaci etc…
+
+•  A cała stopa bezrobocia na SC wynosi 12,43%`,
+
+            'GRANIE BEFORA':
+`Granie "Before-Put On" (wchodzenie bezpośrednio w status osoby bliskiej strukturom) wymaga zupełnie innego podejścia.
+
+• Kim jest Before-Put On?
+To chłopak, który jest już jest w jakiś sposób związany z ulicą, kręci się na spotach, aktywnie uczestniczy w życiu setu, pomaga starszym homies (Big Homies) w codziennych interesach i czeka na oficjalne przyjęcie (Put-On). Zazwyczaj ma już za sobą osiedlową szkołę życia, zna lingo, wie, jak reagować na zagrożenie i nie jest już naiwnym cywilem.
+
+"Before" Doświadczył też pewnie brutalnego życia na ulicy otaczając się gangsterami ponieważ inne kliki widząc że bujasz się z nimi albo pojawisz się na zdjęciu/relacji mogą spuścić ci wpierdol a klika może ci nie pomóc jeżeli nie będzie jej obok. I to najgorszy obraz Befora oraz Cywila że obu was to może spotkać.
+
+• Jak to odgrywać?
+•  Być aktywny na Hoodzie
+Spędzaj czas z czarnuchami, uczestnicz w rozmowach o polityce osiedlowej, pilnujesz terenu (jeżeli ktoś z hoodu cie wezmie na spot inaczej tylko przebywasz na hoodzie).
+•  Okazujesz szacunek 
+Komu? Starszym generacjom (OG, YOG's) oraz musisz zrozumiesz sens swojej generacji.
+•  Znasz zasady panujące na ulicy
+Wiesz, kiedy zachować czujność (np. kiedy pojawia się zagrożenie lub wrogi set) i jak unikać sytuacji "lackin".
+•  Twój cel to budowanie street creditu
+Zdobywanie zaufania i udowodnienie, że zasługujesz na pełnoprawne członkostwo w 83 Hoover Criminals Gang.`,
+
+            'Slang/Lingo': 
+`Lingo&Slang (Lingo bardziej poprawne ew. Dialect) To po prostu slang używany przez bangerów oraz cywili na osiedlu tak jak my mamy swoje gwary.
+
+• GROOVY GRAMMAR ~ Lingo używane tylko przez Hoover Line! Znajdziecie go na discordzie #lingo_x_slang
+crimmin - bangowac hoover
+groov, crim, hoov/hoova, grimey, lok, troop/troopa - zwroty do siebie
+hogg - odpowiednik cuh dla 52 hoover
+figg - zamiast feel, czuc to (zastosowanie; y'figg me?)
+nappy - zamiast happy (diss na nhc przy okazji)
+groovy - spoko, cool
+Straw/Straw Side - ulice Strawberry Avenue
+Manchester Park (nazywany Hoover Park), na skrzyzowaniu ulic Manchester Avenue oraz Hoover Street - park i miejsce hangoutu glownie dla 83,92,94,107 hcg
+Hoover Stomp - c-walk ale dla hoover
+Groove Gang - Hoover Crims
+716 - wszyscy hoovers
+Stay Groovy - odpowiednik stay dangerous albo stay safe.
+MKay/Owekay, Verz. - odpowiednik "okay/cool". Przy okazji diss na Main Street, oraz kartę Rollin 0's.
+Get Groovy - używane najczęściej jako inicjacja fades - "Less get it groovy".
+
+•  Ogólny Slang ~ Znajdziecie go na discordzie #lingo_x_slang
+Addy: Adres.
+Amp up/Gas up: Nakręcać się, dawać z siebie więcej.
+Aight/ait: W porządku
+Bang Dat: Przysięgać na coś ważnego (np. „Na Boga”).
+Bleed/Bleeder: Ośmieszyć kogoś.
+Bunk: Słabe, lipa, nie warte niczego.
+Bussin/Lookin' fly/Lookin' fire/Iced Out: Świetnie wyglądający, fajny, ( może to być coś drogiego typu zegarek ciuchy)
+Get on Bullshit: Wchodzić w konflikt, szukać dymu.
+Blammy/Glizzy/Strap/Chrom/Pipe: Broń palna.
+Bop: Obraźliwe określenie kobiety.
+Bet: Pewnie.
+Beamer/Whip: Auto.
+Bread/Bankroll/Cheese/Cash: Pieniądze.
+Chick/Huzz: Dziewczyna (Ładna/Sexy)
+Capping/Poppin it: Kłamać, przesadzać.
+Claim(ujesz): Reprezentować turf w sposób affilacji np. Claimuje Houston Astros / Detroit Tigers
+Crash Dummy: Świrnięty koleś który niczego się nie boi bądź jest głupi
+Run track/Hit the Gas: Spieprzać, uciekać.
+Dub: Dwadzieścia (np. $20, 2g), albo obraźliwie: przegryw.
+Dap/High Five: Piątka.
+Dusty: Brudny, zapuszczony.
+Eyebusters: Tatuaże lub symbole, które przyciągają uwagę wrogów.
+(Non) Factors: Nieważni ludzie lub gangi. Być 'czynnikiem' (to be a factor) oznacza, że ty lub twoja ekipa (gang) macie znaczenie na ulicy. Być 'nie-czynnikiem' (non-factor) oznacza, że wasz gang jest nieaktywny lub nie stanowi zagrożenia dla nikogo.
+(Back) Fade(s): Bić się. (taking backfades) oznacza, że jeśli twój ziomek się z kimś bije, to ty go wspierasz, walcząc z każdym, kto się wtrąca, albo z innymi, którzy też chcą się bije.
+You feel me/Know what I’m sayin': Czujesz to? Rozumiesz mnie?
+Patrollin/Troopin: Rozglądanie się po osiedlu, coś jak foot-patrol po projektach.
+Fire/Slaps/Smackin': Dobrze.
+Five-zero/Pigs/12’s : Obraźliwe określenia na policje.
+Fades: Najczęściej honorowa walka “na pięści”
+For real: Zgoda / Zgadzam się.
+Thick gang: Gang jest liczny i ma wielu członków oraz jest silny
+Go hard: Zwariować na punkcie czegoś i robić to dobrze. Może to też po prostu oznaczać, że coś jest dobre.
+Good lookin' : Wygląda dobrze, Jest spoko.
+Grid/Grand: $1000 (adekwatnie 2 gridy = 2000$)
+Hood Hop/Flipping Hoods: Przeskakiwanie osiedli (hood hop) to zmienianie osiedla, do którego się należy; zazwyczaj jest to postrzegane jako coś złego, ale zależy to od tego, czy przechodzisz z jednej strony na drugą. Przejście z jednego gangu NHC do innego gangu NHC raz nie jest naprawdę uważane za coś złego, natomiast przejście z gangu NHC do Hoover byłoby mocno potępiane. Zmienianie osiedli więcej niż raz jest niedopuszczalne.
+Him: Określenie kogoś kto jest "Goatem"
+Hella/Holly/Dumb/Mad: Intensyfikator, substytut dla 'bardzo'
+High Tech: Dobry, wysokiej jakości.
+Lackin': Kiedy jest się bez broni (pipe)
+Laggin'/Snoozin': Jeśli jesteś oderwany od rzeczywistości.
+Loafin': Nie bycie aktywnym, leniuchowanie, palenie trawy itd. Może być synonimem słowa 'brakować' w niektórych kontekstach.
+Mark ass/Marked Out: W zasadzie to tak jakby nazwać kogoś suką, tylko to bardziej poważna obelga.
+Money plots/plays: Aktywności, które głównie prowadzą do zarabiania pieniędzy.
+Mop/Head: Terminologia dotycząca robienia loda.
+Movin' Mickey: podejrzane lub nieuczciwe.
+Not lackin': Kiedy masz przy sobie broń (pipe)
+Nerd/Square/Neutron: Ktoś, kto nie jest zaangażowany w działalność gangową, po prostu zwykły obywatel.
+Officer/Deputy: Do policjanta powiemy Officer a do Szeryfa Deputy (Zastępca)
+That’s Out: Pochodzi od określenia ‘niemodne’, czyli coś, co nie jest już na czasie lub nie jest już fajne.
+Outta pocket: Coś niewłaściwego lub Działanie niewłaściwe
+Off Top's: Bez dwóch zdań / Przede wszystkim.
+Keep Dat "Same Energy": Podobnie jak dobrze, zrób to po swojemu. Wiele kontekstów
+No pass/Passes:  Coś w rodzaju wersji ‘przepustki’ z dzielnicy, tzn. masz pozwolenie na wejście do konkretnej dzielnicy, bo znasz kogoś stamtąd. Brak przepustek oznacza, że nikt nie ma prawa przejść przez twoją dzielnicę bez konsekwencji, niezależnie od tego, kogo znają.
+Packed/Maxed Out/Blitz/Whoop: Pobicie kogoś.
+Play Ball: Robić ruchy na ulicy, być aktywnym.
+Plots: Plany.
+Politickin': Rozmawiać o sprawach gangowych.
+Put On: Zostać przyjętym do gangu, a także pokazać komuś coś lub go uświadomić. ‘1-Man’, ‘2-Man’, ‘3-Man’ itd. ‘put on’ oznacza, z iloma osobami musialeś walczyć, żeby zostać przyjętym.
+Put Off: Wyrzucenie członka gangu często ośmieszając go.
+Plugged on: Bycie aktywnym w sprzedaży narkotyków
+Postin'/Hangin': Oblegać dany spot, przesiadywać na nim
+Rankin it/Ranker: Udawanie, że nie jesteś z gangu, ukrywanie przynależności, odmawianie fades.
+Reppin' "Repować" - Być z danej ulicy
+Ringing Bells: Posiadać street credit na ulicy.
+Say less: OK, zgoda.
+Sag/Sagged: Kręcić się po dzielni z zamiarem aktywności.
+Shiesty: Podejrzany albo chciwy "greedy".
+Slide: Wpaść gdzieś.
+Smoke/Beef: Konflikt, kłopoty.
+Street Dice: Gra w kości.
+Strip: Okradać kogoś.
+Hit up/Tag/Throw up/Block up/Wrzuta: Malowanie graffiti (różne style oznaczania terenu). Terminologia związana z graffiti. ‘throw up’ to forma szybsza, w której nie dba się o wygląd. ‘Blocking it up’ oznacza pisanie literami blokowymi.
+Swoop: Podjechać po kogoś.
+Shorty: Opis młodszego członka lub wanna be gangu lub osoby niskiej.
+That’s dead/Kill that: Zakończ temat, skończ z tym.
+Tweaker: Świrnięty.
+Talkin' loose: Rozmowa o niczym.
+Turf/Project/Section/Set/Clique: Teren gangu.
+Troopie/Foo/Foolie/Homie/Gng: Ziomek
+Thot/Thooter: Wulgarne określenie kobiety, łatwa dziewczyna.
+Hoe/Hoochie: Dziwka
+Weirdo/Holly weird: Lekka obelga, której znaczenie znacznie się złagodziło przez nadużywanie. ‘Holly’ pochodzi od ‘Hollyweird’ i wywodzi się z Bay Area, ale czasami jest używane też w LA, zwłaszcza przez młodsze osoby.
+Whack Out: Przekreślić znak wroga na graffiti, dodać do niego „K” (jak np. BK = Blood Killer).
+Yea--ait: Szydercze „dobre, jak tam chcesz”.
+
+•  Narcotics
+Percs: Percs -tabsy-
+Marijuana: Weed / Hash
+Heroina: Dope / Mud
+Methamphetamine: Crystal / Ice / Glass / Shards / Meth
+Cocaine: Blow / Snow / Sugar
+Crack: Rock / Hard
+Ecstasy:  X-pill / Skittles / Molly
+Lean: Purple Drank / Muddy Cup / Dirty Sprunk
+Fentanyl: Fent / Fenty / Fake Oxys / Fake Roxies
+Balon z podtlenkiem azotu "No2": Galaxy Gas / Whippets / Nos / Nangs
+2C-B: Tusi, Speedball, Pink Cocaine, tussi`,
+
+            'Hangout/Spots': 
+`• Hangin' Spots
+Postin' / Hang'in Danego spotu to codzienność w South Central... Każda grupa ma swoje spoty na których hanguje... 
+
+To dotyczy też też tzw. Late-Night Hanging - Nocnego przesiadywania w okolicy z bronią w ręku. Dla młodych to powód do dumy np.
+“Byliśmy na rewirze do 3 rano”.
+
+• Hangin' - Oblegać dany spot, przesiadywać na nim
+
+• Przykład Hangowania spotu In-Game
+Warto mieć na uwadze że po lewej stronie "niewdocznej na zdjęciu" widnieje tag który znajdziecie w "Graffiti" i czarnuchy siedzą oddaleni od głównego serca hoodu pilnując spotu już w późniejszych godzinach kiedy słońce zachodzi.`,
+
+            'Gang Signy': 
+`• GANG SIGN'y To podstawa affilacji na South Central.
+Czarnuchy używają palców z którymi układają różne kombinacje. Każdy gang ma swoje G-Signy z którymi sie ultożsamia. G-sign może być użyty jako znak Affilacji pod Pressing Opozycji albo chęć chwalenia się tym kim się jest. Ogólnie czarnuchy na SC często machają tymi łapami sklejając różne kombinacje palców lecz ze względu na organiczenia serwerów względem animacji można odegrywać że wrzuca się coś na przysłowiowe palce np. "/me wrzucił na palce gsign affilujący do 83, po czym rzucił kilka dissnamowych gsignow w strone 65mnhc"`,
+
+            'Relacje':
+`Relacje IRL są strasznie złożone oraz ciężkie do ogarnięcia przez szarego człowieka który nie jest z tym związany lecz ze względu tylko na grę można tylko na tym się skupić lecz warto mieć na uwadze jakie istnieją sojusze itd ( W Grze wszystko zależy od IC )
+
+• WOJNY/SOJUESZ IC
+Znajdziecie jest opisane na discordzie #clique_relations bądź https://cyg4r.github.io/UnitedGangs-83HooverCriminalsGang/
+
+• WOJNY OOC
+Głównymi rywalami 83HCG są Rollin 90s West Coast Crips i Gangster Crips (98/97/87) a także 84 Main Street Mafia Crips oraz wszystkie gangi z East Coast Crips "ECC" a także prowadzą wojnę z 84 Mad Swan Bloods oraz wszystkimi gangami zrzeszonymi pod szyldem Neighborhood Crips "NHC"
+
+• SOJUSZE OOC
+83HCG są sojusznikiem wszystkich gangów pod szyldem "Hoover Criminal Gang" głównie 74HCG
+
+• Sety Hoover, ktore sa ze soba cliqued up.
+52+59 - Nifty Fiftiez
+92+94 - Snidey Ninetiez, Du-Low-Downs, 924 Hoovers
+107+112 - Selaylowz, Gunnit Hunnits
+716 - wszyscy hoovers
+
+83HCG należą też do sojuszy:
+
+• Hoosanes Alliance ⭐ 🍊 👍♿️
+Hoosanes Alliance to sojusz pomiędzy wszelakimi ugrupowaniami spod szyldu Groove Line (Hoover Criminals), jak i Long Beach Insane Crip Gang. Po mimo ogromnej odległości pomiędzy terytorium Hoover Criminals, a Insane Crip Gang, oba gangi uliczne często się ze sobą socjalizują i spędzają wspólnie czas pielęgnując pozytywne stosunki. Hoosanes Alliance skierowany jest naprzeciw wspólnym wrogom Insane Crip Gang i Hoover Criminals.
+
+Hoosanes to sojusz aktywny także w więzieniach — sama nazwa składa się z dwóch słów: Hoover i Insanes, łącząc to zaś w jedność powstaje Hoosanes.
+
+Członkowskie ugrupowania
+52 Hoover Gangster Crips ⭐🟠 / 3️⃣♿️
+59 Hoover Criminals Gang ⭐🟠
+74 Hoover Criminals Gang ⭐🟠
+83 Hoover Criminals Gang ⭐🟠
+92 Hoover Criminals Gang ⭐🟠
+94 Hoover Criminals Gang ⭐🟠
+107 Hoover Criminals Gang ⭐🟠
+112 Hoover Criminals Gang ⭐🟠 
+E/S Insane Crip Gang (Long Beach; YFC, Babyz, Filthyz) 👍♿️
+
+• Suwoopin, Movin n Groovin/Kill More Napps Alliance 🩸Ⓜ️🟠
+
+Suwoopin, Movin n Groovin, znane także jako Kill More Napps to nieoficjalny kolektyw w postaci sojuszu pomiędzy ugrupowaniami spod talii Bloods 🩸 , Trays/3X/Gangster Crips (w postaci Movin) Ⓜ️ oraz Groove Line (Hoover Criminals) ⭐. W rzekomy sposób mówi się, że sojusz powstał w okolicach 2011 roku, kiedy to większa część aktualnych członków SMG alliance prowadziła krwawe spory z ruchem Neighborhood Crips/Deuces/2X. Założycielskie gangi uliczne w postaci 83 Gangster Crips i Inglewood Family Gangster Bloods zdołały zebrać pokaźną liczbę grup pod skrzydło Kill More Napps Alliance. Oczywistym jest, że nie wszystkie ugrupowania Trays i Bloods należą do SMG, gdyż konflikty na linii ww. ugrupowań nadal trwają, a te, które należą do opisywanego sojuszu żyją ze sobą w zgodzie. Co ciekawe, tylko Groove Line jest kartą, której sety w 100% należą do Suwoopin, Movin n Groovin. 
+
+Kill More Napps/SMG jest sojuszem, który osiąga największą aktywność wewnątrz systemu County Jail, aczkolwiek logicznym jest, że stanowi ogromny faktor relations nawet poza nim czyli na wolności. Ciekawostką jest, że KMN/SMG przyczyniło się do wykreowania niemalże jednolitego monopolu na strefę pimpingu w okolicach Figueroa Street (ulicy szeroko objętej prostytucją) - wpływy SMG ustawiły pimpów spod Groove Line (Hoover Criminals) i pomniejszych sojuszników na szczycie wszelakich tabel, jeśli chodzi o sprzedawanie swojego ciała. Znaczna większość kobiet, które zostają wystawione na Figueroa Street działają pod patronatem reprezentantów Hoover Criminals lub ich sojuszników, gdyż blokują oni wszelkie wpływy swoich wrogów w sferze sutenerstwa.
+
+Członkowskie gangi uliczne
+ZACHODNIE LOS ANGELES:
+Blasten Fools Gangster Crips (BFGC) Ⓜ️👌3️⃣
+By Yourself Gangster Crips (BYGC) Ⓜ️👌3️⃣
+Mansfield Gangster Crips (MGC) Ⓜ️👌3️⃣
+Marvin Gangster Crips (MGC) Ⓜ️👌3️⃣
+Playboy Gangster Crips (PBGC) Ⓜ️👌3️⃣
+
+POŁUDNIOWE LOS ANGELES (ZACHODNIA STRONA)
+City Stone Black P. Stones (CSB) ⭐🤟⚫
+Jungle Stone Black P. Stones (JSB) ⭐🤟⚫
+Fruit Town Brims (FTB) 🎩🤘🔴
+Van Ness Gangster Brims (VNGB) 🎩🤘🔴
+51 Trouble Gangster Crips (51TGC) Ⓜ️👌
+52 Hoover Gangster Crips (52HGC) ⭐🟠🆗
+62 Brims/Harvard Park Brims (HPB) 🎩🤘🔴
+71 Gangster Crips (71GC) Ⓜ️👌3️⃣
+73 Gangster Crips (73GC) Ⓜ️👌3️⃣
+74 Hoover Criminal Gang (74HCG) ⭐🟠🆗
+83 Gangster Crips (83GC) Ⓜ️👌3️⃣
+83 Hoover Criminal Gang (83HCG) ⭐🟠🆗
+92 Hoover Criminals Gang (92HCG) ⭐🟠🆗
+94 Hoover Criminals Gang (94HCG) ⭐🟠🆗
+99 Mafia Crips (99MC) 〽️🟡♿
+107 Hoover Criminal Gang (107HCG) ⭐🟠🆗
+112 Hoover Criminal Gang (112HCG) ⭐🟠🆗
+Harvard Gangster Crips (HGC) Ⓜ️👌
+
+INGLEWOOD
+Neighborhood Pirus (NHP) 🅿️👌🔴
+Avenue Piru Gang (APG) 🅿️👌🔴
+Centinela Park Family Gangster Bloods (CPFGB) 🩸👌🔴
+Inglewood Family Gangster Bloods (IFGB) 🩸👌🔴
+
+POŁUDNIOWE LOS ANGELES (WSCHODNIA STRONA)
+Athens Park Bloods (APB/AMGB) 🩸👌🔴
+Miller Gangster Bloods (MGB/AMGB) 🩸👌🔴
+
+WATTS
+Grape Street Watts Crips (GSWC) 🍇👌3️⃣
+
+COMPTON
+Campanella Park Pirus (CPP) 🅿️👌🔴
+West Side Pirus (WSP) 🅿️👌🔴
+
+LONG BEACH
+Insane Crip Gang (ICG) Ⓜ️👌3️⃣`,
+
+            'Affilacja': 
+`Afiliacja w dzisiejszych gangach nie polega na odgórnym narzucaniu zasad, jak masz się ubierać czy jakie kolory nosić. Już od lat 90, gdy wprowadzono prawo zakazujące zasłaniania twarzy w miejscach publicznych, przerzucili się z bandan zakrywających połowę twarzy na wplatane afiliacje w inne elementy ubioru np. buty, czapki, koszulki. Dziś nie ma jednolitego stylu, możesz wyglądać nawet jak zwykły mieszkaniec LA.
+
+W realiach zbliżających się do 2026 roku afiliacje są dużo bardziej zróżnicowane i już dawno przestały być jednolite; każdy set rozwija własną kulturę wizualną a zasady nie są tak sztywne jak w latach 90. czy nawet 2000. W praktyce oznacza to że np. fullcap nie zawsze wskazuje wprost na przynależność do konkretnej strony. Wiele setów używa liter, cyfr, skrótów albo symboli, które mają większe znaczenie niż sam kolor fullcapa.`,
+
+            'Hood Days': 
+`• Hood Days/Set Days
+To jeden z najważniejszych momentów dla każdego setu, dzień w którym cała okolica zatrzymuje się by uhonorować historię hoodu, zmarłych homies i wspólne doświadczenia.
+
+• Nie jest to święto dla ,gości z zewnątrz" tylko wydarzenie budujące tożsamość i pamięć o tym skąd dany set pochodzi. 
+W praktyce wygląda to tak że całe sety zbierają się w jednym miejscu a wszyscy starają się nosić jak najwięcej elementów kojarzących się z setem: customowe ubrania, fullcapy z miejscową symboliką, ragi przypięte wszędzie gdzie się da (zgodnie z afiliacją), emblematy, numery, kolory. Chodzi o pokazanie jedności i kultury a nie o popisywanie się przepychem. Podczas Hood Days często wspomina się poległych, robi grupowe zdjęcia, wszędzie leci lokalna muza, mówi o dawnych wydarzeniach z okolicy a starsi członkowie przypominają młodym zasady i historię. To dzień w którym każdy banger pokazuje że stoi za swoim hoodem nie tylko w gadce ani w internecie ale realnie twarzą w twarz obok reszty swojego setu.
+
+W większości przypadków Hood Day odbywa się w dniu który ma dla danego setu symboliczną wartość może to być numer ulicy, numer bloku, dzień upamiętnienia poległych homies lub ważna data w historii hoodu. Na przykład pewne sety wskazują daty takie jak 10 czerwca (6/10), odpowiadające numeracji 60, czy 3 sierpnia (3/8) łączące się z 83 Gangster Crips, 4 sierpnia (4/8) 84 Mad Swan Bloods. To pokazuje że wybór terminu bywa bardzo spersonalizowany. W ramach RP warto aby Twój set również przyjął unikalną datę to podnosi immersję buduje więź członków i pozwala celeborwać to co jest dla Was istotne!!`,
+
+            'Podział': 
+`Warto zaznaczyć że wiele z tych informacji funkcjonuje głównie w narracjach ulicznych, przekazach członków oraz w mediach społecznościowych a nie w oficjalnych uporządkowanych źródłach. Struktury gangów są płynne lokalne i często różnią się w zależności od dzielnicy, miasta czy nawet konkretnego okresu czasu.
+
+• Groove Line (Hoover Criminals) ⚠️ NASZA KARTA ⚠️
+Hoover Criminals wywodzą się z South Los Angeles i pierwotnie byli powiązani z Crips. Z czasem zerwali tę afiliację i zaczęli funkcjonować jako odrębna struktura, określając się jako EBK. W praktyce oznacza to wrogość zarówno wobec Crips, jak i Bloods (not that they are enemies and kill everyone from the start, but they didn't want to be under their structures)
+
+• Neighborhood (Deuces/2X)
+Neighborhood Crips, nazywani Deuces lub 2X, jedna z najstarszych i najbardziej rozbudowanych linii w obrębie Crips. Ich tożsamość opiera się na symbolice liczby dwa, co w praktyce przekłada się na historyczny konflikt z kartą 3X. W skład 2X wchodzą dziesiątki setów a jednym z najbardziej rozpoznawalnych parasoli jest Rollin
+
+Do najbardziej należą między innymi Rollin' 60s Neighborhood Crips, Rollin' 90s Neighborhood Crips, Rollin' 100s Neighborhood Crips czy East Coast Crips. Warto jednak podkreślić że nie każdy set Neighborhood automatycznie należy do Rollin. Rollin to szeroki szyld ale 2X jako karta jest pojęciem szerszym i obejmuje także grupy które formalnie nie używają tej nazwy
+
+• Rollin 0’s
+Rollin Os to parasol obejmujący znaczną część setów Neighborhood, choć nie wszystkie. Do najbardziej znanych należą Rollin' 30s Original Harlem Crips oraz Rollin' 60s Neighborhood Crips. Ciekawostką jest fakt że Rollin 30s mimo nazwy nie są klasyfikowani jako Neighborhood, choć historycznie utrzymują bliskie relacje.
+
+Symbolika Rollin Os często odnosi się do wizerunku luksusu i hasła Rich Rollin, co bywa wykorzystywane w identyfikacji wizualnej.
+
+• Gangster (Trays/3X)
+Gangster Crips, znani jako Trays lub 3X, stanowią drugą wielką oś podziału wśród Crips. Ich symbolika opiera się na liczbie trzy co historycznie ustawiło ich w konflikcie z 2X.
+
+Wśród najbardziej znanych setów znajdują się Eight Tray Gangster Crips, Playboy Gangster Crips, Avalon Gangster Crips czy Broadway Gangster Crips. 3X są obecni nie tylko w Kalifornii ale również w innych stanach gdzie struktura bywa bardziej luźna i często dostosowana do lokalnych realiów
+
+• Swervin (4X)
+4X są mniej liczni i znacznie mniej medialni. W przeciwieństwie do dwóch dominujących kart, 4X nie mają jednego wspólnego wroga a ich polityka zależy od konkretnego setu i lokalnych konfliktów
+
+• Blocc
+Blocc Crips wywodzą się z rejonu Westmont w hrabstwie LA. Wśród najbardziej znanych znajdują się 107 Original Blocc Crips, 113 Original Blocc Crips Blocc mają bliskie związki z Neighborhood, ale jednocześnie pozostają w konfliktach z wybranymi setami tej samej linii. Ich głównymi przeciwnikami są Hoover Criminals oraz wybrane struktury Bloods
+
+• Hustler
+Hustler Crips funkcjonowali głównie w południowej części Los Angeles, zwłaszcza w okresie epidemii cracku w latach 80. Z czasem ich znaczenie spadło, część setów przeszła pod 3X a inne uległy osłabieniu wskutek konfliktów i represji
+
+• Blood Card
+Struktura Bloods nie opiera się na jednej scentralizowanej organizacji lecz na szeregu niezależnych setów które łączy wspólna tożsamość, kolorystyka i wspólni przeciwnicy. W odróżnieniu od wielu kart Crips, gdzie podziały 2x, 3x czy 4x mają wyraźny wymiar symboliczny w przypadku Bloodsów większą rolę odgrywają historyczne linie pochodzenia i lokalne koalicje
+
+Jedną z najstarszych i najbardziej wpływowych frakcji są Pirus, wywodzący się z miasta Compton. To właśnie Piru sets były jednymi z pierwszych grup które w latach 70. weszły w otwarty konflikt z Cripsami co zapoczątkowało szersze formowanie się Bloods. Z czasem dołączały kolejne grupy tworząc sety o własnych nazwach i tradycjach
+
+Istotną rolę odgrywają również Brims, aktywni m.in. w LA i NYC. W różnych regionach kraju Brims mogą funkcjonować pod odmiennymi strukturami a ich relacje z innymi setami Bloods bywają zarówno sojusznicze, jak i napięte
+
+W kontekście więziennym kluczowe znaczenie ma United Blood Nation. UBN powstało w latach 90. na Wschodnim Wybrzeżu jako próba zjednoczenia Bloods osadzonych w zakładach karnych, głównie w stanie Nowy Jork. W praktyce oznacza to powstanie struktury o charakterze bardziej hierarchicznym niż tradycyjne, uliczne sety. Stąd podział na osoby określane jako kutt i no kutt
+
+Bycie kutt oznacza pełną lojalność wobec UBN i podporządkowanie się jego wewnętrznym zasadom, rangom oraz regulaminom. W niektórych środowiskach może to być postrzegane jako zerwanie z pierwotnym setem z wolności i przejście pod inną strukturę dowodzenia
+
+Z Kolei no kutt to utrzymanie identyfikacji z własnym, lokalnym setem i odrzucenie formalnej przynależności do UBN. W praktyce prowadzi to do napięć ponieważ więzienna polityka często wymusza jasne opowiedzenie się po jednej ze stron
+
+Oprócz podziału więziennego Blood Card obejmuje także inne linie identyfikacyjne. Istnieją sety, które określają się jako Piru, inne jako Brim, jeszcze inne używają własnych nazw bez bezpośredniego odwołania do tych dwóch głównych nurtów. W niektórych miastach funkcjonują również lokalne koalicje, które łączą kilka setów Bloods przeciwko wspólnym przeciwnikom niezależnie od różnic historycznych
+
+Warto też podkreślić że struktura Bloods poza Kalifornią bywa odmienna od tej z rejonu South Los Angeles. Na Wschodnim Wybrzeżu większy wpływ ma model organizacyjny UBN, podczas gdy na Zachodnim Wybrzeżu większe znaczenie mają tradycyjne lokalne sety i ich relacje z sąsiednimi gangami.
+
+• Sureños 
+Sureños to ogólne określenie dla latynoskich gangów ulicznych które identyfikują się z południową Kalifornią i uznają zwierzchność meksykańskiej struktury więziennej znanej jako Mexican Mafia. Nazwa wywodzi się od hiszpańskiego słowa oznaczającego południowy a symbolika opiera się często na liczbie 13 która odnosi się do trzynastej litery alfabetu
+
+W praktyce Sureños nie są jednym gangiem. To parasol obejmujący setki niezależnych gangów które mogą ze sobą rywalizować na ulicy ale w więzieniu podporządkowują się wspólnej linii. W rejonie Los Angeles dominują właśnie sety Sureño szczególnie w dzielnicach o dużej populacji latynoskiej. Wśród najbardziej rozpoznawalnych gangów identyfikujących się jako Sureños znajdują się na przykład Florencia 13, 18th Street czy MS-13, choć każdy z nich ma własną historię, strukturę i terytorium. Wspólnym mianownikiem jest lojalność wobec południowej linii w systemie więziennym
+
+• Norteños
+Norteños to odpowiednik Sureños z północnej Kalifornii. Их nazwa oznacza północni a symbolika opiera się na liczbie 14 odnoszącej się do czternastej litery alfabetu. W przeciwieństwie do Sureños, Norteños są powiązani z więzienną organizacją Nuestra Familia
+
+Historyczny konflikt między Sureños a Norteños ma swoje korzenie w podziałach więziennych z lat 60. i 70. w Kalifornii. Od tamtej pory napięcie przeniosło się również na ulice. W praktyce oznacza to że gangi identyfikujące się jako Norteños i Sureños traktują się jako wrogów niezależnie od konkretnego miasta. W regionie Los Angeles obecność Norteños jest znacznie słabsza niż Sureños ponieważ LA znajduje się w południowej części stanu. Norteños są silniej zakorzenieni w północnej Kalifornii w miastach takich jak San Jose czy Sacramento. Pojedyncze kliki mogą jednak funkcjonować również na południu szczególnie w środowiskach migracyjnych lub w kontekście więziennym
+
+• Podziały i różnice względem Crips i Bloods
+Najważniejsza różnica polega na tym że Sureños i Norteños to przede wszystkim podział oparty na więziennej polityce i etnicznym zapleczu a nie na ulicy jak w przypadku Crips czy Bloods. Gangi afroamerykańskie takie jak Crips i Bloods funkcjonują równolegle do struktur latynoskich i wchodzą z nimi w lokalne konflikty lub sojusze w zależności od dzielnicy. W LA główną siłą latynoską pozostają sety Sureño. Norteños są tam raczej mniejszością w porównaniu z północą stanu
+
+•  Pozostałe Podziały
+• Brims
+• Pirus
+• Family
+• Hub & Dub (Watts Crips & Compton Crips)
+• Mafia Crip`,
+
+            'Wackouts': 
+` • Wackout to inaczej dissnames na klikę, kartę, sojusz klik
+•  Hoover Criminal Hoods
+
+74 Hoover Criminals Gang — Seven Hoes, Seven Whores
+107 Hoover Criminals Gang (Selos) — Sellouts, Snello
+
+•  Crip Hoods
+Neighborhood East Coast Crips — Cheese Toasts
+Menlos Neighborhood Crips — Men Hoes, Meatlofs
+Neighborhood Crips (wszystkie) — Napps
+School Yard Crips x3 — Skrap Yards
+West Boulevard Crips — Waste Buckets, Water Buckets
+Rollin' 30s Original Harlem Crips — Barlems, Dirties
+Rollin' 40s Neighborhood Crips — Phonkies, Funkies
+Rollin' 60s Neighborhood Crips — Sissies
+Rollin' 90s Neighborhood Crips — Natts, Nachos
+Rollin' 100s Neighborhood Crips Alliance — Hunnit Buns, Honey Bunns, Clocks
+PJ Watts Crips — Flea Jays
+Grape Street Watts Crips — Fake Streets, Power Rangers, G-Strings
+Compton Avenue Crips — Cookies n Crème, Cookies
+Raymond Avenue Crips — Rice Krispies
+Underground Block Crips — Ugly Girls
+Main Street Mafia Crips — Mini Skirts
+87 Gangster Crips — Fake Sevens
+97 Gangster Crips — Blind Sevens
+Avalon Crips — Vons
+Insane Crips — Insects
+Rollin' 20s Crips — Twinks
+Poccet Hood Compton Crip - Pizza Huts
+Acacia Blocc Compton Crip - Ashy Booties
+Santana Block Compton Crips — Banannas
+South Side Compton Crips — Snots, Soft Batch Cookies
+Mona Park Compton Crips — Mashed Potatoes
+Carver Park Compton Crips — Starvers
+Kelly Park Compton Crips — Smelly Marks
+Park Village Compton Crips — Pussy Village, Perverts
+Nutty Block Compton Crips — Nutter Butters, Neckbones, Nasties
+Eight Tray Gangster Crips — Eggs Toasts n Grits, Ashtrays
+43 Gangster Crips — Traders
+57 Neighborhood Crips — Five Slaves (5-Slaves)
+Asian Boyz Crips — Apples
+Venice Shoreline Crip - Shoelaces
+
+•  Blood Hoods
+
+Inglewood Family Gangster Bloods — Faggots, Ingleweirds
+Van Ness Gangster Bloods — Girlies, Very Nasty Girls
+Black P. Stones — Piss Stains
+Bounty Hunter Watts Bloods — Booty Holes, Booty Hoes, Baseheads
+Denver Lane Gangster Bloods — Dick Licks
+Athens Park Bloods — Apple Pies
+Family Swan Bloods — Sways
+Bloodstone Villains Gang — Sillains
+Rollin' 20s Bloods — Twancs
+Liggett Street Bloods — Lipsticks
+Crenshaw Mafia Gangster Bloods — Maggots, Child Molesters, Cookie Monsters
+Mob Piru — Monkeys
+Lime Hood Piru — Lame Hood, Lemonheads
+Cedar Block Piru — Cheeseburgers
+West Side Piru — Wheat Sales
+Tree Top Piru — Tank Tops
+Queen Street Bloods — Queers, Quick n Splits
+Neighborhood Piru — Nasty Hot Pockets
+Pueblo Bishop Bloods — Peptos, Peptobismol
+Hacienda Village Watts Bloods — Vegetables
+Fruit Town Piru — Froot Loops
+Bebop Watts Bloods — Flip Flops
+
+•  Latin Hoods
+
+Tepa 13 — Tampons
+Lennox 13 — Klennex
+Florencia 13 — Faggots, Flowers
+18th Street Gang — Fake Teens
+Mara Salvatrucha 13 — Monkey Shits
+Longos 13 — Chongos, Long Hoes
+Compton Varrio Tortilla Flats — Tuna Fishes
+Compton Varrio Segundo - Sevollas
+Compton Varrio Tres - Trash
+Compton Varrio 117 - 711s
+Compton Varrio 124 - Ratas
+Compton Varrio Lokos - Mocos
+South Los 13 — Shoelaces, Wafflos
+Junior Mafia 13 — Jungle Monkeys
+Gardena 13 — Gallinas
+38th Street Gang — Tramps
+Harpeys 13 — Herpes
+White Fence 13 — Waffles
+Krazy Ass Mexicans 13 — Hamsters
+Primera Flats 13 — Papas Fritas
+Culver City 13 — Cacas
+Westside Wilmas 13 — Weak Side
+Eastside Wilmas 13 — Cheese Side
+Sentinel Boys 13 — Strawberries
+Tiny Dukes 13 — Tiny Dicks
+Inglewood 13 — Pecks
+Eastside 13 — Cheeseside
+Da Bratz 13 — Rats
+Norwalk 13 - Sidewalks
+Santa Monica 13 — Smacks
+Villa Boys 13 — Vanillas
+Barrio Pobre 13 — Puchas
+Avenues 13 — Noodles
+Barrio Los Padrinos - Madrinas
+KAM 13 - Hamsters
+Largo 36 - Levas/Legos
+
+• All Wackouts (Wockouty ogólne na wszystkie dane kliki)
+
+All Grape Streets - Fake Streets
+All Menlos NHC Crip - MenHoez, Meatloafs
+All NHC East Coast Crips — Cheese Toast
+All Hoovers — Hoochies, Snoochies, Snoovers
+All Crips — Crabs
+All Trays/3X/Gangster Crips — Tramps
+All Bloods — Slobs
+All Brims — Bike Rims, Sike Rims
+All Piru — Die Ru's
+All Neighborhood Crips - Napps
+All Surenos - Sewer Rats, Sur Rats, Skraps
+
+•  Short Wackouts (Używane np. na graffiti)
+
+MK - mafia crip, msmc
+NK - NHCs, black ppl (long beach)
+BK - Bloods, Brims, Bubbles (51TGC)
+VK - VNGs
+CK - Crips
+LK - LPP, DLGB, Longos
+HK - Hoovers
+GK - GSWC, all GCs
+FK- IFG, F13
+DK- Deuce/52HGC
+SK - BPS/Stones
+PK - All Pirus
+TK - T for Tramps/all GCs
+OK - R30s,R40s,R50s,R60s,R90s,R100s
+UK-UGC
+1K - 51TGC
+2K- 52HGC, R20sNHB
+3K - 3x, any ending in 3
+4K - R40s
+5K- BPS, 55NHC
+6K- R60sNHC`,
+
+            'Generacje': 
+`Struktura pokoleniowa w organizacji:
+
+• Generacje Gangu
+Czym jest generacja? Najprościej można ująć to jako przydomek osoby wychowanej w danych czasach z danymi grupami co wskazywało kiedyś na hierarchie dawnych struktur gangu które strasznie różniły się od dzisiejszego podejścia nowej szkoły i kultury w gangach między 70's a 2k26 tzw. "historyczne epoki"
+
+• Jak wyglądała generacja na przestrzeni lat w 83' Hoover Criminals Gang?
+Rozpisane informacje są poprowadzone od najstarszych członków gangu po najmłodsze pokolenie:
+
+• O.G. (Original Gangster)
+Wiek: Osoby po 40., 50. i 60. roku życia.
+Reprezentują lata 70. i 80. Należeli do pierwszego pokolenia założycielskiego, kiedy gang funkcjonował jeszcze jako Hoover Groovers, a następnie 83 Hoover Crips. To ojcowie-założyciele obecnych struktur.
+Dzisiaj są tylko długą historią i mocnym fundamentem kultury który przekazują dalej żyjąc na projekcie albo odsiadują wyroki dożywocia w więzieniach stanowych.
+
+• Y.O.G. (Young Original Gangster) 
+Wiek: Liderzy operacyjni i starsi mentorzy, zazwyczaj w wieku 30–40 lat.
+Pokolenie przełomu lat 80. i 90. To oni uczestniczyli w najważniejszym historycznym przewrocie gangu – w połowie lat 90., na skutek wyniszczających wojen z sąsiadami (m.in. Rollin 60s, Rollin 90s i innymi setami Neighborhood Crips), podjęto decyzję o całkowitym odłączeniu się od struktury "Crips". To ta generacja przeforsowała zmianę nazwy na niezależnych 83 Hoover Criminals.
+
+• B.G. (Baby Gangster) / O.B.G. (Original Baby Gangster)
+Wiek: Pełnoprawni dorośli członkowie gangu w wieku około 20–28 lat.
+Pokolenie wczesnych lat 2000. Wychowali się już po odłączeniu od Crips, funkcjonując wyłącznie pod marką "Criminals". Byli główną siłą napędową agresywnej filozofii EBK (Everybody Killer). W tej erze 83 Hoovers atakowali wszystkie konkurencyjne grupy w południowym Los Santos bez względu na to, czy byli to Bloods'i, czy Crips'i.
+
+• T.G. (Tiny Gangster) / Y.B.G. (Young Baby Gangster)
+Wiek: Starsi nastolatkowie i młodzi dorośli w wieku 16–20 lat.
+Młoda krew, która budowała swoją reputację od około 2010 roku. Zostali wcieleni do gangu jako podopieczni starszych z generacji Y.O.G. (tzw. relacja Big Homie / Lil Homie). To pokolenie, które przeniosło terytorialne zniewagi, wojny gangów oraz "dissowanie" zamordowanych rywali na platformy muzyczne, tworząc wczesny LS drill i wykorzystując media społecznościowe do prowokacji.
+
+• Infants / D.O.G. (Dust-Off Gangster) / O.T.G. (Original Tiny Gangster)
+Wiek: Najmłodsi wcielani do gangu z sąsiedztwa w wieku zaledwie 12–15 lat.
+Współczesna generacja działająca dzisiaj bezpośrednio "na rogu" (tzw. frontline). Z racji bardzo młodego wieku, braku doświadczenia i olbrzymiej presji ze strony starszych (muszą fizycznie "zarobić" na prawo noszenia tatuaży tzw. eyebusters 83 i reputację), uchodzą za najbardziej nieprzewidywalnych. Wykonują najtrudniejsze zadania, z często ryzykownymi włamaniami i atakami na terytorium rywali, funkcjonując nierzadko jako tzw. crash dummies.
+
+• Łączenie Grup (Lineage)
+Np. T.G. oraz Y.B.G opisują na ulicy ten sam status i ten sam przedział wiekowy (najczęściej starszych nastolatków). Różnica w nazwie nie wynika z wieku ale z tego kto dokładnie wciągnął danego chłopaka do gangu (kto jest jego "Big Homie")
+
+Ma to swoje dwie ścieżki 
+
+• 1. Ścieżka "rozmiaru" 
+
+To klasyczna, najpopularniejsza linia. Nazwy kurczą się wraz z kolejnymi pokoleniami:
+
+• O.G. (np. O.G. Monster)
+• B.G. / Lil (np. Lil Monster – podopieczny O.G. Monstera)
+• T.G. / Tiny (np. Tiny Monster – podopieczny Lil Monstera)
+• Infant (np. Infant Monster – najmłodszy w linii)
+
+Więc to po prostu kolejne pokolenie w danej "rodzinie" wewnątrz gangu.
+
+• 2. Ścieżka "wieku" (Y.B.G. – Young Baby Gangster)
+
+Czasami, zamiast używać słowa "Tiny" (malutki), członkowie gangu wolą użyć słowa "Young" (młody), tworząc modyfikację tytułu swojego mentora:
+
+Jeśli mentor ma tytuł B.G. (Baby Gangster)...to jego podopieczny, aby podkreślić, że jest od niego młodszy, ale dziedziczy jego linię, nazywa się Y.B.G. (Young Baby Gangster).
+
+Kolejny z tej samej linii mógłby zostać nazwany J.B.G. (Junior Baby Gangster).
+
+• Dlaczego są w tej samej generacji?
+Na ulicy, na terytorium 83 Hoover Criminals, spotkasz chłopaka, który nazywa się Tiny C-Bo i drugiego, który nazywa się Young Baby Snoop. Obaj mają po 18 lat, razem chodzą do szkoły, razem patrolują ulicę i obaj mają taki sam status.
+
+Są z tej samej generacji, po prostu należą do innych "starszych braci", którzy użyli innej tradycji nazewnictwa podczas wprowadzania ich w szeregi gangu. Dlatego w klasyfikacjach grupuje się ich jako jeden poziom operacyjny.`,
+
+            'Inicjacje': 
+`Współczesne wejście przypomina bardziej proces (respect the process!) niż jednorazowe wydarzenie. Nie ma często obowiązkowego "bicia na wejście" tzw. jumped-in ani przymusu udowodnienia czegoś poprzez blasted in. To nie znaczy że te formy całkowicie zniknęły. W setach wciąż się je practicaluje ale nie jest to reguła. Wszystko dziś jest pomieszane!
+
+Dziś inicjacja ewoluowała zamiast rytuału liczyć się może coś innego np. ciągłość obecności w środowisku. Brak sztywnej inicjacji nie znaczy że każdy może 'wejść' musisz zostać zaakceptowany, sprawdzony, znany. To co robisz na co dzień mówi więcej niż jeden ruch. Pamiętaj że każdy set = inne działanie i nigdy nie dowiemy się jak to jest i tak kto ma put-ony, head-upy więc róbcie jak chcecie tak żebyście dobrze się bawili.`,
+
+            'Tatuaże': 
+`• Eyebusters/Eyebussers/Tatuaże 
+Od zawsze pełniły ważną rolę w środowisku, to swoisty język znaków, którym członek setu komunikuje swoją historię, lojalność i pozycję. Nikt nie rozdaje ich z urzędu. Zrobiłeś coś poważnego? Zastrzeliłeś przeciwnika z wrogiego setu, przeżyłeś więzienie? W porządku, wszyscy z Twojego hoodu i tak to widzisz. Jeśli chcesz, możesz sobie to wydziarać. To Twoja decyzja i Twój sposób by zostawić ślad!
+
+Dawniej bywało inaczej. W czasach bardziej sformalizowanych struktur, gdy gangi trzymały się twardych zasad i inicjacja była czymś w rodzaju rytuału przejścia, tatuaż często był symbolem przynależności nadawanym przez innych. Często pojawiał się w wyznaczonym miejscu na ciele tak by nie było wątpliwości kim jesteś i skąd pochodzisz. Dziś jednak rzeczywistość uliczna mocno się zmieniła.
+
+Pamiętajcie jednak że dzisiaj raczej mniejsza część bangerów tatuuje sobie na ciele znamion swojej przestępczości ale chodzi głównie tylko o zmianę prawa dot. gangów w LA. Robiąc tatuaże np. trophy, zgadzają się na ich konsekwencje co może nawet skutkować utratą życia.`,
+
+            'Ranker Behavior': 
+`• ZACHOWANIA (przykłady) które (MOGA) przekreślać Cię na hoodzie:
+
+• 9-5 I MYŚLISZ ŻE JESTEŚ REAL? (PRACA LEGALNA)
+Banging nie uznaje regularnej pracy (chyba że to jakieś community service, zastępujesz ojca, malujesz u wujasa płot, idziesz do ciotki Lauren zanieść zakupy, umiesz to odegrać a nie jesteś zamkniętą głową z wielkim ego). To oznacza że nie jesteś aktywny, nie masz czasu na sprawy setu, nie kontrolujesz. Banger nie podlega pod nikogo. Nie czekasz na wypłatę co miesiąc i uniform na śmieciarkę. Jak możesz iść za homies o każdej porze skoro masz harmonogram w fastfoodzie? Dodatkowo, jeśli ktoś Cię zobaczy za ladą w uniformie sam się prosisz o potężny press i wstyd… ( $ możecie zarobić na milion sposobów, otwórzcie łeb a nie tylko grind energii na serwerach)
+
+• Masz swoje lata a dalej chcesz wychodzić na fade z małolatami...
+Zamiast mentorować próbujesz być twardy przez co się ośmieszasz. Też desperacki ruch zajmij się gadaniem dziadek (40+)
+
+• False-flagging i wycofywanie się przy presji
+Nie stajesz za homie, chowasz kolory w złym miejscu
+
+• Zdradzanie zasad, mówienie jednego robienie drugiego
+Mówisz o lojalności ale masz znajomych po drugiej stronie, kolaborujesz z rival sets albo sam się wycofujesz przy realnych działaniach.
+
+• Fake Poster
+Zgrywasz real na InstaPicu rzucasz free the homie pod zdjęciem ale nawet nie byłeś go odwiedzić…`,
+
+            'DP': 
+`• Lista niektórych rzeczy za które możesz mieć kłopoty na hoodzie:
+
+Ignorowanie hoodowych wydarzeń - nie pojawiasz się na hood days, set days i innych ważnych aktywnościach.
+W netbangingu - przypisujesz sobie akcje których nie zrobiłeś, tworzysz fałszywy obraz siebie.
+Wall-banging i dissy bez podstaw - tagujesz ściany lub dissujesz inne sety z którymi twój set nie miał żadnego beefu.
+Sprowadzanie problemów - prowokujesz inne sety na terenie swojego hoodu. np. gonisz drugs na swoim projekcie = ściągasz kłopoty i uwagę Departamentu.
+Ukrywanie afiliacji - nie przyznajesz się do swojego setu gdy jesteś pressowany.
+Unikanie odpowiedzi - nie odpowiadasz na pytania skąd jesteś, czy bangujesz, jakiego setu jesteś częścią.
+Beefs z cywiliami - bijesz cywili, prowokujesz ich bez powodu, przez co psujesz reputację setu.
+Unikanie aktywności - nie uczestniczysz w akcjach, nie pomagasz setowi w codziennych działaniach.
+Nagrywanie DP - rejestrujesz dyscyplinarki.
+Niehonorowe zachowanie w walce - oszustwa w bójkach, wyciąganie broni gdy przegrywasz, brak szacunku do zasad.
+False claiming - przypisujesz sobie przynależność do setu z kojim nie masz nic wspólnego.
+Wynoszenie informacji - dzielisz się detalami, mimo że ktoś sobie tego nie życzy.
+Kłamstwo o swoich ruchach - udajesz że zrobiłeś coś dla setu czego w rzeczywistości nie było.
+
+• Odgrywanie DP
+DP powinno być momentem który faktycznie coś znaczy dla postaci a nie szybkim śmiesznym epizodem dla zasady. Jeśli postać dostaje DP to w grze warto pokazać konsekwencje, przez jakiś czas nie wychodzić na akcje, spędzić więcej czasu na hoodzie albo wręcz przeciwnie, odgrywać że zamknęła się w domu, unika ludzi, jest przygaszona, zawstydzona albo sfrustrowana. To buduje narrację a nie ją psuje. Po DP dobrze jest też zdjąć np. raga i wrócić do niego dopiero po dwóch dniach. Moment kiedy wracasz z ragiem od razu komunikuje reszcie setu że przemyślałeś sytuację i musisz godnie reprezentować set. Tego typu odgrywanie tworzy klimat, daje innym punkt zaczepienia fabularnego i sprawia że DP staje się realnym elementem rozwoju postaci a nie kolejnym bezwartościowym eventem który niczego nie zmienia.
+
+• Jak wykonać DP w dobrym stylu?
+DP nie polega na bezsensownym biciu kogoś. To ma być sytuacja w której set egzekwuje zasady a osoba karana czuje wstyd i konsekwencje, nie poniżenie dla śmiechu. Najważniejsze żeby DP miało klimat, było spójne z charakterem hoodu i jednocześnie nie przeradzało się w kłótnie OOC, to tylko gierka…
+
+• W practicalce DP można wykonać na kilka sposobów:
+
+Fade 1-on-1 to najczęstsza forma. Dwóch homies idzie w bok ulicy, reszta stoi obok i pilnuje żeby nikt nie przeszkadzał. Nikt nie komentuje tego śmiechem bo to poważny i fajny roleplayowo moment. (Dajesz się pobić, albo np jakiś og może powiedzieć że koniec fade dla roleplayu)
+
+DP na słowo jeśli przewinienie jest lżejsze, starszy homie może po prostu pocisnąć kogoś na spokojnie tłumacząc gdzie popełnił błąd bez fizycznej przemocy.
+
+Zadaniowe DP np. sprzątanie hoodu, stanie na cornerze przez godzinę, obserwacja ulicy. Nadaje się zwłaszcza wtedy gdy przewinienie nie było agresywne.
+
+Odizolowanie np. ktoś z setu mówi żeby przez jakiś czas wyczilować, nie uczestniczyć w akcjach, trzymać się na dystans, aż homie pokaże że przemyślał sytuację
+
+• Ważne by DP było wykonane z szacunkiem do immersji, bez beki, bez komentarzy OOC, bez przerywania tonu. 
+Banger który dostaje DP powinien potraktować to jako część historii swojej postaci a nie kara mechaniczna. Wtedy DP ma sens buduje klimat hoodu i pozwala każdemu zagrać coś mocniejszego niż tylko kolejną zwykłą scenę.`,
+
+            'Zachowania': 
+`• Wzorce zachowań na ulicy i w interakcjach:
+
+• Fade / Squabble / Fair-one
+Fade to walka wręcz tylko i wyłącznie na pięści, zasady to głównie fair one-on-one ale mogą też być to squabble czyli walki dużej ilości czarnuchów przeciwko sobie lub fady gdzie bije sie 2-4 czarnuchów, często jako rozwiązanie konfliktu o disrespect, głównie leci o szacunek, słowo rzucone, plotki, aktywność na terenie, oskarżenie o snitching i jakieś głupoty tylko po to żeby se zajebać w łeb.
+
+Miej na uwadze że Fair-one w dzisiejszych czasach jest practicalnie nierealny i nikt raczej nie zaatakuje cie 1vs1 to nie polska gdzie ma sie "pseudo zasady", Tak samo Fade w którym bierze udział 4 czarnuchów nie znaczy że to będzie walka 2vs2 !! Może to być walka 1vs3 a dalej jest to fade, tak samo squabble może być 2vs8 i dalej bedzie to squabble. Czasem trzeba po prostu przyjąć wpierdol od wrogiej kliki a nie mówić "kurwy bez honoru".
+
+• Pressing
+Press to fundament bangingu. Robisz to wobec tych którzy wyglądają "podejrzanie" lub gdy chcesz sprawdzić przynależność. Pamiętaj nie pressuj społeczniaków! Szkoda Twojego czasu…
+
+• Claimowanie hoodu
+Zawsze mówisz skąd jesteś, to Twoja tożsamość, graffiti, tatuaże, przydomki, zawsze reprezentuj swój set!!!!!! (to twój powód do dumy!)
+
+• Drive-by / wszelaki shootout / retaliation
+Każdy z wyżej wymienionych musi mieć powód np. beef, personal beef (ale wtedy wykonuje ta osoba plus np. Twój najlepszy homie a nie jedziecie na 3 superauta jak wieśniaki), disrespect, śmierć kogoś z hoodu. Zawsze po odgrywaj reakcje emocjonalna np. strach, fearrp też jest fajne.
+
+• Dodatkowe przykładowe aktywności
+
+Rozmowy o hood politics - Dyskusje kto się liczy, kto jest soft, kto snitch
+Po beefie - Rozmowy o śmierciach, revenge, PTSD RP
+Hood patrol/troopin - Objeżdżanie hoodu, obserwowanie, chodzenie se
+
+• Co Grać?
+Fade zawsze z dobrym uzasadnieniem!
+Press realistycznie z klimatem!
+Hustle czyli emocje, relacje i ucieczki!
+Nie skacz na wszystkich, buduj relacje w hoodzie!
+Sytuacje uliczne… reaguj na 12, beefy, plotki!
+
+• Przykładowe Interakcje:
+Wdawanie się w fades
+Troopin po swoim terenie
+Stanie pod cornershopami i gadka
+Zrobienie party
+Gamble games
+Opowiadanie poprzednich dni
+Gadka o dupkach pieniądzach i muzyce itd`,
+
+            'Graffiti':
+`• GRAFFITI & TAGGING NA HOODZIE
+Kultura tagowania i malowania graffiti jest nieodłącznym elementem zaznaczania terytorium gangu na South Central. Tagi pełnią funkcie wizualnej granicy, ostrzeżenia dla wrogich setów oraz miejsca do przekazywania informacji ulicznych i oddawania hołdu poległym homies.
+
+• ZASADY TAGOWANIA:
+• Wackout / Cross-out: Zamalowywanie lub przekreślanie tagów konkurencji z dodaniem litery "K" (np. CK, BK) oznacza otwarty disrespect i prowokację do beefu.
+• Terytorium: Tagowanie poza własnym rewirowym obszarem bez wsparcia ekipy grozi natychmiastowym prinosem/pressowaniem ze strony lokalnych bangerów.
+• Pamięć o poległych: Napisy R.I.P. lub "Rest In Peace" z przydomkami zmarłych członków gangu są nienaruszalne na własnym hoodzie. 
+
+• Pierwsze zdjęcie pokazuje właściwy sposób Cross-outowania/Wackout'owania!!`,
+
+            'Zmiany': 
+`• LA dogania tempo takich miast jak Chicago, Memphis czy Detroit. 
+Młodzi nie tylko wnoszą nowy sposób mówienia i działania, ale też przedefiniowali niektóre zasady bangingu. Zamiast trzymać się starych struktur tworzą własny kod. W ich świecie coraz częściej pojawia się pojęcie „trophy”, które zastępuje klasycznego „shot callera” sprzed lat. Trophy to ktoś kto ma status ale jednocześnie to symbol, coś o co można "walczyć". Jeżeli przeciwny set trafi Twojego trophy, a Ty w getbacku złapiesz ich trophy sam możesz nim zostać. The nowa forma "statusu".
+
+Coraz częściej widać że trophy stało się pełnoprawnym symbolem nowej generacji bangingu. Pojawiła się zajawka na robienie customowych full capów z wyszytym motywem trophy, często dopasowanym kolorystycznie do konkretnego setu albo hoodu. Dla młodych to nie tylko dodatek ale wizualny znak przynależności coś co mówi o pozycji bez słów więc czują się ważni i dążą do tego statusu.
+
+Małe trophy na polikach stało się czymś w rodzaju znaku rozpoznawczego. Coraz częściej też widać że emoji pucharka przeniknęło do sieciowej komunikacji, pojawia się w bio czy postach jako prosty ale wymowny symbol statusu. Dziś jeden pucharek w opisie potrafi powiedzieć więcej niż cały zestaw tagów a w środowisku bangingu jest to czytelny kod kto kim jest.
+
+• Życie jako Trophy
+Wyobraż sobie ile immersji w gierkę wnosi bycie trophy w świecie bangingu. Wiesz że ktoś może "polować" właśnie na ciebie że każdy kto chce to wykorzystać i zyskać status podczas np. beefu może próbować Cię szukać. Twoja postać jest głodna w nocy? Idziesz do Lucky Pluckera? Może się okać że już nie wrócisz. Czasem lepiej przeczekać noc głodny w domu trzymając się z dala od okna perché jeden błąd jedno niepotrzebne wyjście może cię kosztować wszystko co do tej pory zyskałeś (itemki też)
+
+Ale są i tacy którzy po zdobyciu trophy nie potrafią się ukrywać. Wręcz przeciwnie, wychodzą na ulice i flexują tym wszędzie. Wrzucają fotki jak stackują pod znakiem przy której ulicy są, ogólnie pokazują trophy jak symbol zwycięstwa. Chcą żeby każdy widział kim są nawet jeśli wiedzą że mogą stać się targetem
+
+Jeśli chcesz być tuff musisz być gotów na konsekwencje. Idziesz do Binco? Nie idż sam weż swoich homies. Wychodzisz poza hood? Upewnij się że ktoś jest za Tobą. Jesteś trophied up? GND już ma cię na radarze, obserwują każdy ruch, każde story, każde post. W tym świecie bycie kimś to nie tylko prestiż, to odpowiedzialność i strach który czujesz nawet wtedy kiedy FiveM jest wyłączony.
+
+• MIEJSCA SPOTKAŃ
+O każdej porze dnia i nocy można zobaczyć grupy po kilka czasem nawet kilkanaście młodych chłopaków stojących przed sklepem. To nie przypadek bo oni te miejsca można powiedzieć „ochraniają”. Logicznie patrząc nikt nie przyjdzie okraść sklepu jeśli przed wejściem stoi dziesięciu młodych czarnych małolatów. Często spotkané jest że biorą coś ze sklepu bez płacenia ale gdy któryś z nich się dorobi zawsze zostawia tam pełno gotówki tak jakby oddawał z nawiązką Sytuacja dla obu stron win-win. Oni mają swoje miejsce i kontrolę, a właściciel sklepu ma spokój i bezpieczeństwo
+
+• SŁAWA
+Coraz częściej też widzimy że osoby z murder case czy gang enhancement zaczynają zdobywać popularność w muzyce dokładnie tak jak w Chicago, Atlancie czy Detroit. Ludzie traktują ich jak symbole autentyczności a sama przynależność do konkretnego case'u zaczyna budować reputację. LA które przez lata było kojarzone ze starą szkołą dziś szybko nadrabia i coraz mocniej odbija w stronę nowoczesnej medialnej wersji bangingu, co można zobaczyć po jak na LA, bardzo dobrych liczbach odtworzeń w serwisach streamingowych artystów którzy maja/mieli takie właśnie zarzuty i sa np. lockedup (np. Bkandz ze Stockton, ale nadal CA, YoungThreat itd.)
+
+• ULICA W SIECI
+Można też zauważyć że cała ta transformacja dzieje się równolegle z rozwojem internetu i mediów społecznościowych. Ulica i sieć zaczęły się przenikać, filmiki z akcji, zdjęcia, wszystko to buduje nowy wizerunek setów i ich członków. To nie jest już tylko kwestia bycia na hoodzie, ale też bycia obecnego online. Kto ogarnia oba światy ten dziś jest na topie.`
+        };
+
+        const topicImages = {
+            'Grzeczni Ludzie': ['png/grzeczni.png'],
+            'School': ['png/szkola.png'],
+            'Tatuaże': ['png/tatuaze.png'],
+            'Zmiany': ['png/trophy.png'],
+            'Inicjacje': ['png/inicjacja.png'],
+			'Gang Signy': ['png/gs.png', 'png/gs1.png'],
+			'Graffiti': ['png/wackout.png', 'png/rp1.png', 'png/hp1.png', 'png/rp2.png', 'png/hp2.png', 'png/rp3.png', 'png/hp3.png', 'png/rp4.png', 'png/hp4.png', 'png/rp5.png', 'png/hp5.png', 'png/rp6.png', 'png/hp6.png'],
+			'Hood Days': ['png/hd.png', 'png/hd1.png', 'png/hd2.png'],
+			'Hangout/Spots': ['png/spot.png'],
+        };
+
+        // Tablice zdjęć 
+        const affilCapsImages1 = ['png/hacap.png', 'png/hacap2.png'];
+        const affilCapsImages2 = ['png/dtcap.png', 'png/dtcap2.png'];
+        const affilCapsImages3 = ['png/wncap.png', 'png/wncap2.png'];
+        const affilCapsImages4 = ['png/okc.png', 'png/okc2.png'];
+        const affilCapsImages5 = ['png/cb.png', 'png/cb2.png'];
+        const affilCapsImages6 = ['png/kc.png', 'png/kc2.png'];
+
+        let activeCategoryNumber = null;
+        let currentTopicTitle = null;
+        let hoodGirlsSubtopicMode = false;
+        let currentViewState = 'home';
+        let currentModuleType = null;
+        let sequentialPath = null;
+        let sequentialTopicIndex = -1;
+        const sequentialTopicKeys = ['GRANIE NERDA','GRANIE BEFORA','Historia Postaci','SŁABOŚCI POSTACI','UBIÓR','Hood Names','UZALEŻNIENIA','Nuda','Grzeczni Ludzie','Cops','School','Slang/Lingo','Ranker Behavior','DP','Relacje','Affilacja','Podział','Wackouts','Hangout/Spots','Gang Signy','Hood Days','Generacje','Inicjacje','Tatuaże','Zachowania','Graffiti','Zmiany'];
+        const sequentialDisplayNames = {'LORE': 'LORE GANGU 83 HOOVER', 'GRANIE NERDA':'GRANIE NERDA','GRANIE BEFORA':'GRANIE BEFORA','Historia Postaci':'HISTORIA POSTACI','SŁABOŚCI POSTACI':'SŁABOŚCI POSTACI','UBIÓR':'UBIÓR','Hood Names':'HOOD NAMES','UZALEŻNIENIA':'UZALEŻNIENIA','Nuda':'NUDA','Grzeczni Ludzie':'GRZECZNI LUDZIE','Cops':'COPS','School':'SCHOOL','Slang/Lingo':'SLANG & LINGO','Ranker Behavior':'RANKER BEHAVIOR','DP':'DISCIPLINARY PUNISHMENT','RELACJE':'RELACJE','Affilacja':'AFFILACJE','Podział':'PODZIAŁY','Wackouts':'WACKOUTS','Hangout/Spots':'HANGOUT & SPOTS','Gang Signy':'GANG SIGNY','Hood Days':'HOOD DAYS','Generacje':'GENERACJE','Inicjacje':'INICJACJE','Tatuaże':'TATUAŻE','Zachowania':'ZACHOWANIA','Graffiti':'GRAFFITI','Zmiany':'ZMIANY','HoodGirls':'HOOD GIRLS'};
+
+        let currentGalleryImages = [];
+        let currentGalleryIndex = 0;
+
+        let currentScale = 1;
+        let imgPosX = 0;
+        let imgPosY = 0;
+        let isDragging = false;
+        let startDragX = 0;
+        let startDragY = 0;
+
+        function hideAllViews() {
+            document.getElementById('selection-grid').style.display = 'none';
+            document.getElementById('sequential-view').style.display = 'none';
+            document.getElementById('topic-view').style.display = 'none';
+            document.getElementById('categories-grid').style.display = 'none';
+            hideAllSubgrids();
+        }
+
+        function triggerZoomIn(element) {
+            element.classList.remove('zoom-in');
+            void element.offsetWidth;
+            element.classList.add('zoom-in');
+        }
+
+        function loadModule(type) {
+            hideAllViews();
+            document.getElementById('main-hero').style.display = 'none';
+            currentModuleType = type;
+
+            if (type === 'sequential') {
+                currentViewState = 'sequential';
+                document.getElementById('nav-bar').style.display = 'none';
+                document.getElementById('sequential-heading').innerText = '📘 Wybierz Płeć Postaci 📘';
+                document.getElementById('gender-selection-grid').style.display = 'grid';
+                document.getElementById('man-subcategories-grid').style.display = 'none';
+                
+                const seqView = document.getElementById('sequential-view');
+                seqView.style.display = 'flex';
+                triggerZoomIn(seqView);
+            } else if (type === 'research') {
+                currentViewState = 'research';
+                activeCategoryNumber = null;
+                currentTopicTitle = null;
+                clearSubtopicHighlights();
+                
+                for (let i = 1; i <= 3; i++) {
+                    const card = document.getElementById(`cat-${i}`);
+                    if (card) {
+                        card.style.display = 'flex';
+                        card.classList.remove('active-category', 'full-width-banner', 'cat-anim-1', 'cat-anim-2', 'cat-anim-3');
+                    }
+                }
+                
+                document.getElementById('nav-bar').style.display = 'none';
+                const catGrid = document.getElementById('categories-grid');
+                catGrid.style.display = 'grid';
+                triggerZoomIn(catGrid);
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function selectGender(gender) {
+            if (gender === 'man') {
+                currentViewState = 'man_selected';
+                document.getElementById('nav-bar').style.display = 'flex';
+                document.getElementById('zoomOutBtn').style.display = 'none';
+                document.getElementById('sequential-heading').innerText = '📘 Wybierz Ścieżkę Postaci 📘';
+                document.getElementById('gender-selection-grid').style.display = 'none';
+                
+                const manSub = document.getElementById('man-subcategories-grid');
+                manSub.style.display = 'grid';
+                triggerZoomIn(manSub);
+            } else if (gender === 'girl') {
+                sequentialPath = 'girl';
+                currentViewState = 'girl_selected';
+                sequentialTopicIndex = -1;
+                openTopic('HoodGirls');
+            }
+        }
+
+        function startSequentialPath(path) {
+            sequentialPath = path;
+            openTopic(path === 'befora' ? 'GRANIE BEFORA' : 'GRANIE NERDA');
+        }
+        function sequentialTopicsForPath() {
+            if (sequentialPath === 'befora') return ['GRANIE BEFORA', ...sequentialTopicKeys.slice(2)];
+            if (sequentialPath === 'girl') return ['HoodGirls', ...sequentialTopicKeys.filter(topic => !['GRANIE NERDA', 'GRANIE BEFORA'].includes(topic))];
+            if (sequentialPath === 'nerd') {
+                const removedNerdTopics = ['GRANIE BEFORA', 'Gang Signy', 'Affilacja', 'Hood Days', 'Wackouts', 'Generacje', 'Inicjacje', 'Tatuaże', 'Ranker Behavior', 'DP', 'Zachowania', 'Graffiti', 'Zmiany'];
+                return sequentialTopicKeys.filter(topic => !removedNerdTopics.includes(topic));
+            }
+            return sequentialTopicKeys;
+        }
+        function updateSequentialControls() {
+            const controls = document.getElementById('topic-sequence-controls');
+            const enabled = !hoodGirlsSubtopicMode && currentModuleType === 'sequential' && ['nerd','befora','girl'].includes(sequentialPath);
+            controls.style.display = enabled ? 'flex' : 'none';
+            if (!enabled) return;
+            const topics = sequentialTopicsForPath(), idx = topics.indexOf(currentTopicTitle);
+            sequentialTopicIndex = idx;
+            document.getElementById('topic-sequence-progress').textContent = `TEMAT ${idx+1} / ${topics.length}`;
+            const prev = document.getElementById('topicPreviousBtn');
+            prev.disabled = idx <= 0; prev.style.opacity = idx <= 0 ? '.4' : '1';
+            const next = document.getElementById('topicNextBtn');
+            next.textContent = idx >= topics.length-1 ? 'Koniec ścieżki ✓' : 'Następny temat →';
+            next.disabled = idx >= topics.length-1; next.style.opacity = next.disabled ? '.4' : '1';
+        }
+        function nextSequentialTopic() {
+            const topics = sequentialTopicsForPath(), idx = topics.indexOf(currentTopicTitle);
+            if (idx >= 0 && idx < topics.length-1) openTopic(topics[idx+1]);
+        }
+        function previousSequentialTopic() {
+            const topics = sequentialTopicsForPath(), idx = topics.indexOf(currentTopicTitle);
+            if (idx > 0) openTopic(topics[idx-1]);
+        }
+
+        function clearSubtopicHighlights() {
+            document.querySelectorAll('.sub-card, .subtopic-card').forEach(card => {
+                card.classList.remove('active-subtopic');
+            });
+        }
+
+        function highlightActiveSubtopic(title) {
+            clearSubtopicHighlights();
+            document.querySelectorAll('.sub-card, .subtopic-card').forEach(card => {
+                if (card.textContent.includes(title)) {
+                    card.classList.add('active-subtopic');
+                }
+            });
+        }
+
+        function selectCategory(catNumber) {
+            hideAllViews();
+            activeCategoryNumber = catNumber;
+            currentTopicTitle = null;
+            currentViewState = 'category';
+
+            clearSubtopicHighlights();
+
+            for (let i = 1; i <= 3; i++) {
+                const card = document.getElementById(`cat-${i}`);
+                if (card) {
+                    card.classList.remove('active-category', 'full-width-banner', 'cat-anim-1', 'cat-anim-2', 'cat-anim-3');
+                    if (i === catNumber) {
+                        card.style.display = 'flex';
+                        card.classList.add('active-category', 'full-width-banner', `cat-anim-${catNumber}`);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            }
+
+            document.getElementById('categories-grid').style.display = 'grid';
+            document.getElementById('nav-bar').style.display = 'flex';
+            document.getElementById('zoomOutBtn').style.display = currentModuleType === 'research' ? '' : 'none';
+
+            const subgrid = document.getElementById(`subgrid-${catNumber}`);
+            if (subgrid) {
+                subgrid.style.display = 'grid';
+                triggerZoomIn(subgrid);
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openHoodGirlsTopic(title) {
+            hoodGirlsSubtopicMode = true;
+            openTopic(title);
+        }
+        function returnToHoodGirls() {
+            hoodGirlsSubtopicMode = false;
+            openTopic('HoodGirls');
+        }
+
+        function openTopic(title) {
+            if (!['GRANIE NERDA', 'GRANIE BEFORA'].includes(title)) hoodGirlsSubtopicMode = false;
+            document.querySelectorAll('.hoodgirls-return-wrap').forEach(el => el.remove());
+            hideAllViews();
+            currentTopicTitle = title;
+
+            if (currentModuleType === 'research') {
+                for (const [catId, topics] of Object.entries(categoryTopicsMap)) {
+                    if (topics.includes(title)) {
+                        activeCategoryNumber = parseInt(catId);
+                        break;
+                    }
+                }
+
+                for (let i = 1; i <= 3; i++) {
+                    const card = document.getElementById(`cat-${i}`);
+                    if (card) {
+                        card.classList.remove('active-category', 'full-width-banner', 'cat-anim-1', 'cat-anim-2', 'cat-anim-3');
+                        if (i === activeCategoryNumber) {
+                            card.style.display = 'flex';
+                            card.classList.add('active-category', 'full-width-banner');
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                }
+                highlightActiveSubtopic(title);
+                document.getElementById('categories-grid').style.display = 'grid';
+                currentViewState = 'topic';
+            } else {
+                if (sequentialPath === 'girl' || title === 'HoodGirls') {
+                    currentViewState = 'girl_selected';
+                } else {
+                    currentViewState = 'man_topic';
+                }
+            }
+
+            document.getElementById('nav-bar').style.display = hoodGirlsSubtopicMode ? 'none' : 'flex';
+            document.getElementById('zoomOutBtn').style.display = currentModuleType === 'research' ? '' : 'none';
+            document.getElementById('topic-title-text').innerText = sequentialDisplayNames[title] || title;
+
+            const bodyContent = document.getElementById('topicBodyContent');
+            let text = defaultTopicsData[title] ? defaultTopicsData[title] : "Soon.";
+            
+            text = text.replace(/•\s*([^\n]+)/g, '• <b>$1</b>');
+            
+            if (title === 'HoodGirls' && sequentialPath === 'girl') {
+                const extraLinksHtml = `
+                    <div style="margin: 30px 0; padding: 20px; background: rgba(235, 110, 31, 0.08); border: 2px dashed var(--primary-glow); border-radius: 10px; text-align: center;">
+                        <div style="font-size: 14px; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">
+                            ⭐ Warto Też Sprawdzić ⭐
+                        </div>
+                        <div style="display:flex; justify-content:center; gap:22px; flex-wrap:wrap;">
+                            <div class="mini-visual-card hoodgirls-feature-card" onclick="playSound(); openHoodGirlsTopic('GRANIE NERDA')">
+                                <img src="png/nerd.png" alt="Nerd" class="mini-visual-thumb" onerror="this.style.display='none'">
+                                <div class="mini-visual-overlay"></div>
+                                <div class="mini-visual-content">
+                                    <div class="mini-visual-title">NERD</div>
+                                </div>
+                            </div>
+                            <div class="mini-visual-card hoodgirls-feature-card" onclick="playSound(); openHoodGirlsTopic('GRANIE BEFORA')">
+                                <img src="png/ntb.png" alt="Before-Put On / Member" class="mini-visual-thumb" onerror="this.style.display='none'">
+                                <div class="mini-visual-overlay"></div>
+                                <div class="mini-visual-content">
+                                    <div class="mini-visual-title">BEFORE-PUT ON / MEMBER</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                text += extraLinksHtml;
+            }
+
+            bodyContent.innerHTML = text;
+            if (hoodGirlsSubtopicMode && ['GRANIE NERDA', 'GRANIE BEFORA'].includes(title)) {
+                document.getElementById('topic-sequence-controls').style.display = 'none';
+                bodyContent.insertAdjacentHTML('afterend', '<div class="hoodgirls-return-wrap"><button class="hoodgirls-return-btn" onclick="playSound(); returnToHoodGirls()">← Cofnij do HoodGirls</button></div>');
+            }
+
+            const imageContainer = document.getElementById('topicImageContainer');
+            imageContainer.innerHTML = '';
+
+            if (title === 'Affilacja') {
+                const affilMainContainer = document.createElement('div');
+                affilMainContainer.style.display = 'flex';
+                affilMainContainer.style.flexDirection = 'column';
+                affilMainContainer.style.gap = '15px';
+                affilMainContainer.style.marginTop = '25px';
+
+                const aData = [
+                    { name: 'Houston Astros', logo: 'png/HA.png', desc: 'Ulubiona drużyna wszystkich gangów spod parasolki Hoover. Logo "H" połączone z gwiazdą jest najczęściej widoczne w formie tatuaży oraz odzieży u członków sekcji. Litera "H" nawiązuje w logotypie do Hoover.', caps: affilCapsImages1 },
+                    { name: 'Detroit Tigers', logo: 'png/DT.png', desc: 'Charakterystyczna kaligraficzna, staroangielska litera „D”. Drużyna i symbol w nawiązaniu do "Du Lows" charakterystyczny dla 924 Hoovers (92+94HCG) potocznie zwanymi Du-Low Downs lub Two-Foes (2-4\'s).', caps: affilCapsImages2 },
+                    { name: 'Washington Nationals', logo: 'png/WN.png', desc: 'Memberzy Hoovers noszą fullcapy tej drużyny ze względu na wyrazistą kaligraficzną literę „W”, która w ich kulturze symbolizuje przynależność do West Side.', caps: affilCapsImages3 },
+                    { name: 'OKC Thunder', logo: 'png/okcl.png', desc: 'Memberzy Hoovers noszą fullcapy tej drużyny ze względu na symbol "OKC" umieszczony na czapkach oznaczający "ROLLIN 0s KILLER" jako dissrespekt opozycji spod karty Rollin."', caps: affilCapsImages4 },
+                    { name: 'Chicago Bears', logo: 'png/cbl.png', desc: 'Memberzy Hoovers noszą fullcapy tej drużyny ze względu na symbol "KC" umieszczony na czapkach oznaczający "Crip Killer / Killer Crip" jako dissrespekt opozycji.', caps: affilCapsImages5 },
+                    { name: 'Kansas City Royals', logo: 'png/kcl.png', desc: 'Memberzy Hoovers noszą fullcapy tej drużyny ze względu na symbol "KC" umieszczony na czapkach oznaczający "Crip Killer / Killer Crip" jako dissrespekt opozycji.', caps: affilCapsImages6 }
+                ];
+
+                aData.forEach(item => {
+                    const row = document.createElement('div');
+                    row.className = 'affil-item-row';
+
+                    const topContent = document.createElement('div');
+                    topContent.className = 'affil-top-content';
+
+                    const logoBox = document.createElement('div');
+                    logoBox.className = 'affil-interactive-box';
+                    logoBox.onclick = () => { playSound(); openImageModal([item.logo], 0); };
+                    logoBox.innerHTML = `
+                        <img src="${item.logo}" alt="${item.name}" class="affil-logo-preview-thumb" onerror="this.src='png/kat2.png'">
+                        <div class="affil-interactive-info">
+                            <h4>${item.name}</h4>
+                            <p>Kliknij, aby otworzyć logo</p>
+                        </div>
+                    `;
+
+                    const capsBtn = document.createElement('div');
+                    capsBtn.className = 'affil-caps-trigger';
+                    capsBtn.title = "Sprawdź fullcapy drużyny";
+                    capsBtn.onclick = () => { playSound(); openImageModal(item.caps, 0); };
+                    capsBtn.innerHTML = `🧢`; 
+
+                    topContent.appendChild(logoBox);
+                    topContent.appendChild(capsBtn);
+
+                    const descP = document.createElement('div');
+                    descP.className = 'affil-desc-text';
+                    descP.innerHTML = `<b></b> ${item.desc}`;
+
+                    row.appendChild(topContent);
+                    row.appendChild(descP);
+                    affilMainContainer.appendChild(row);
+                });
+
+                imageContainer.appendChild(affilMainContainer);
+            }
+
+            if (topicImages[title] && Array.isArray(topicImages[title]) && topicImages[title].length > 0) {
+                const flexContainer = document.createElement('div');
+                flexContainer.className = 'images-flex-container';
+
+                topicImages[title].forEach((src, idx) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'topic-image-wrapper';
+                    wrapper.onclick = () => openImageModal(topicImages[title], idx);
+
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = title;
+                    img.className = 'topic-image';
+
+                    wrapper.appendChild(img);
+                    flexContainer.appendChild(wrapper);
+                });
+
+                imageContainer.appendChild(flexContainer);
+            }
+
+            const topicView = document.getElementById('topic-view');
+            topicView.style.display = 'block';
+            updateSequentialControls();
+            triggerZoomIn(topicView);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleZoomOut() {
+            if (currentViewState === 'topic' && activeCategoryNumber !== null && currentModuleType === 'research') {
+                selectCategory(activeCategoryNumber);
+            } else if (currentViewState === 'category' && currentModuleType === 'research') {
+                loadModule('research');
+            } else if (currentViewState === 'man_selected') {
+                document.getElementById('sequential-heading').innerText = '📘 Wybierz Płeć Postaci 📘';
+                document.getElementById('man-subcategories-grid').style.display = 'none';
+                document.getElementById('gender-selection-grid').style.display = 'grid';
+                document.getElementById('nav-bar').style.display = 'none';
+                currentViewState = 'sequential';
+            } else if (currentViewState === 'girl_selected') {
+                loadModule('sequential');
+            } else if (currentViewState === 'man_topic') {
+                sequentialPath = null;
+                sequentialTopicIndex = -1;
+                selectGender('man');
+            } else {
+                showHomeView();
+            }
+        }
+
+        function hideAllSubgrids() {
+            for (let i = 1; i <= 3; i++) {
+                const subgrid = document.getElementById(`subgrid-${i}`);
+                if (subgrid) subgrid.style.display = 'none';
+            }
+        }
+
+        function showHomeView() {
+            hideAllViews();
+            currentViewState = 'home';
+            currentModuleType = null;
+            activeCategoryNumber = null;
+            currentTopicTitle = null;
+
+            document.getElementById('nav-bar').style.display = 'none';
+            document.getElementById('main-hero').style.display = 'block';
+
+            const selGrid = document.getElementById('selection-grid');
+            selGrid.style.display = 'grid';
+            triggerZoomIn(selGrid);
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* --- OBSŁUGA INTERAKTYWNEGO MODALU ZDJĘĆ / GALERII --- */
+        function openImageModal(imagesInput, startIndex = 0) {
+            const modal = document.getElementById('imageModal');
+            currentGalleryImages = Array.isArray(imagesInput) ? imagesInput : [imagesInput];
+            currentGalleryIndex = startIndex;
+
+            currentScale = 1;
+            imgPosX = 0;
+            imgPosY = 0;
+            updateImageTransform();
+            updateModalGalleryView();
+
+            modal.style.display = 'flex';
+        }
+
+        function updateModalGalleryView() {
+            const modalImg = document.getElementById('modalImg');
+            const prevBtn = document.getElementById('modalPrevBtn');
+            const nextBtn = document.getElementById('modalNextBtn');
+
+            modalImg.src = currentGalleryImages[currentGalleryIndex];
+
+            if (currentGalleryImages.length > 1) {
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+            } else {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+            }
+        }
+
+        function prevModalImage(e) {
+            e.stopPropagation();
+            playSound();
+            currentGalleryIndex = (currentGalleryIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+            currentScale = 1;
+            imgPosX = 0;
+            imgPosY = 0;
+            updateImageTransform();
+            updateModalGalleryView();
+        }
+
+        function nextModalImage(e) {
+            e.stopPropagation();
+            playSound();
+            currentGalleryIndex = (currentGalleryIndex + 1) % currentGalleryImages.length;
+            currentScale = 1;
+            imgPosX = 0;
+            imgPosY = 0;
+            updateImageTransform();
+            updateModalGalleryView();
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        function checkCloseModal(event) {
+            if (event.target.id === 'imageModal' || event.target.id === 'modalViewport') {
+                closeImageModal();
+            }
+        }
+
+        function updateImageTransform() {
+            const img = document.getElementById('modalImg');
+            img.style.transform = `translate(${imgPosX}px, ${imgPosY}px) scale(${currentScale})`;
+        }
+
+        function zoomInModal(e) {
+            e.stopPropagation();
+            currentScale = Math.min(currentScale + 0.25, 4);
+            updateImageTransform();
+        }
+
+        function zoomOutModal(e) {
+            e.stopPropagation();
+            currentScale = Math.max(currentScale - 0.25, 0.5);
+            if (currentScale === 0.5) {
+                imgPosX = 0;
+                imgPosY = 0;
+            }
+            updateImageTransform();
+        }
+
+        const viewport = document.getElementById('modalViewport');
+        viewport.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            const zoomIntensity = 0.15;
+            if (e.deltaY < 0) {
+                currentScale = Math.min(currentScale + zoomIntensity, 5);
+            } else {
+                currentScale = Math.max(currentScale - zoomIntensity, 0.5);
+                if (currentScale <= 1) {
+                    imgPosX = 0;
+                    imgPosY = 0;
+                }
+            }
+            updateImageTransform();
+        }, { passive: false });
+
+        viewport.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startDragX = e.clientX - imgPosX;
+            startDragY = e.clientY - imgPosY;
+        });
+
+        window.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            imgPosX = e.clientX - startDragX;
+            imgPosY = e.clientY - startDragY;
+            updateImageTransform();
+        });
+
+        window.addEventListener('mouseup', function() {
+            isDragging = false;
+        });
+    </script>
+</body>
+</html>
